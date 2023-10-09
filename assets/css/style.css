@@ -98,3 +98,26 @@ header nav {
     font-size: 30px;
     font-weight: 500;
 }
+
+.benefits {
+    padding-top: 100px;
+}
+.benefits__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.benefits_item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.benefits_item img {
+    width: 100px;
+    height: 100px;
+}
+.benefits_item span {
+    font-size: 24px;
+    font-weight: 500;
+    width: 350px;
+}
