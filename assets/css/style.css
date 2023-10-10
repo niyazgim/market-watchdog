@@ -3,7 +3,7 @@
 
 
 :root {
-    --corportive-color:#F24333;
+    --corporative-color:#F24333;
     --icons-color--dark:#2D2C3A;
     --text-color-dark-1:#121212;
     --text-color-dark-2:#555555;
@@ -42,6 +42,10 @@ h1 {
     font-size: 40px;
     font-weight: 900;
 }
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
 
 
 header {
@@ -71,11 +75,11 @@ header nav {
     gap: 15px;
 }
 .header__user-btns a.btn.sign-in {
-    background:  var(--corportive-color);
+    background:  var(--corporative-color);
     color:var(--text-color-light-1);
 }
 .header__user-btns a.btn.sign-up {
-    border: 1px solid var(--corportive-color);
+    border: 1px solid var(--corporative-color);
 }
 
 .banner {
@@ -102,10 +106,8 @@ header nav {
 .benefits {
     padding-top: 100px;
 }
-.benefits__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.benefits__content h2 {
+    margin-bottom: 50px;
 }
 .benefits_item {
     display: flex;
@@ -120,4 +122,137 @@ header nav {
     font-size: 24px;
     font-weight: 500;
     width: 350px;
+}
+.benefits__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.plans {
+    padding-top: 100px;
+}
+.plans__container {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: flex-end;
+    column-gap: 50px;
+}
+.plan {
+    padding: 12px;
+    background: var(--modal-color--light-1);
+    border-radius: 10px;
+}
+.plan h3 {
+    font-size: 36px;
+    font-weight: 600;
+}
+.plan__description {
+    margin-top: 5px;
+}
+.plan__price {
+    margin-top: 20px;
+}
+.plan__price > .price-num {
+    font-size: 36px;
+    font-weight: 900;
+}
+.plan__btn {
+    width: 100%;
+    border-radius: 100px;
+    background: var(--corporative-color);
+    color: var(--text-color-light-1);
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+.recommend {
+    padding: 0;
+    padding-bottom: 12px;
+    border: 1px solid var(--corporative-color);
+}
+.recommend .plan__text {
+    padding-inline: 12px;
+}
+.plan-reccommend__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    font-size: 26px;
+    font-weight: 600;
+    background: var(--corporative-color);
+    color: var(--text-color-light-1);
+    margin-bottom: 42px;
+    border-radius: 10px 10px 0 0;
+}
+
+.faq {
+    padding-top: 100px;
+}
+.faq__content h2 + .faq__item{
+    margin-top: 35px;
+}
+.faq__item + .faq__item {
+    margin-top: 12px;
+}
+.faq__item {
+    width: 600px;
+    border-radius: 10px;
+    border: 1px solid var(--corporative-color);
+    padding: 16px;
+}
+.faq__question-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq__question {
+    font-size: 24px;
+    font-weight: 500;
+}
+.faq__answer {
+    margin-top: 10px;
+}
+.faq__btn {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+footer {
+    margin-top: 150px;
+    width: 100%;
+    padding: 35px 0px 75px 0px;
+}
+.footer__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer__links {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.footer__links a + a {
+    margin-top: 7px;
+}
+.footer__links h3 + a, .footer__links h3 + .payment-companies-logos_container {
+    margin-top: 14px;
+}
+.payment-company-logo {
+    max-height: 50px;
+}
+.payment-companies-logos_container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 10px;
 }
