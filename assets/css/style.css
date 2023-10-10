@@ -1,4 +1,4 @@
-/* import (for adaptive)*/
+/* [to-do] import (for adaptive)*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans&display=swap');
 
 
@@ -9,8 +9,8 @@
     --text-color-dark-2:#555555;
     --text-color-dark-3:#7C7C7C;
     --text-color-light-1:#FFFFFF;
-    --input-border-color--non-active:#616161;
-    --input-border-color--active:#E1E1E1;
+    --input-border-color--active:#616161;
+    --input-border-color--non-active:#E1E1E1;
     --input-text-color--non-active:#9A9A9A;
     --modal-color--light-1:#FBFBFB;
     --modal-color--bg:#2d2c3a30;
@@ -28,16 +28,33 @@
     /* font-family: 'Noto Sans', sans-serif; */
 }
 
+/* inputs */
+input {
+    background: none;
+    outline: none;
+    border: 1px solid var(--input-border-color--non-active);
+    color: var(--input-text-color--non-active);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
+
 a.btn {
     display: inline-block;
     border-radius: 5px;
     padding: 12px 20px;
 }
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
 h1 {
     font-size: 40px;
     font-weight: 900;
@@ -46,7 +63,6 @@ h2 {
     font-size: 30px;
     font-weight: 700;
 }
-
 
 header {
     padding: 20px 0;
@@ -82,6 +98,40 @@ header nav {
     border: 1px solid var(--corporative-color);
 }
 
+footer {
+    margin-top: 150px;
+    width: 100%;
+    padding: 35px 0px 75px 0px;
+}
+.footer__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer__links {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.footer__links a + a {
+    margin-top: 7px;
+}
+.footer__links h3 + a, .footer__links h3 + .payment-companies-logos_container {
+    margin-top: 14px;
+}
+.payment-company-logo {
+    max-height: 50px;
+}
+.payment-companies-logos_container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+
+/* index for unsubscribed/unloged users */
 .banner {
     padding-top: 100px;
 }
@@ -225,34 +275,52 @@ header nav {
     outline: none;
 }
 
-footer {
-    margin-top: 150px;
-    width: 100%;
-    padding: 35px 0px 75px 0px;
+
+/* index for subscribed users */
+.search-res {
+    padding-top: 50px;
 }
-.footer__container {
+.search-product {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.footer__links {
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-}
-.footer__links a + a {
-    margin-top: 7px;
-}
-.footer__links h3 + a, .footer__links h3 + .payment-companies-logos_container {
-    margin-top: 14px;
-}
-.payment-company-logo {
-    max-height: 50px;
-}
-.payment-companies-logos_container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
     align-items: center;
-    column-gap: 10px;
-    row-gap: 10px;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--input-border-color--non-active);
+    width: 650px;
+}
+.search-product input[type="search"] {
+    padding: 0;
+    border: none;
+    background: none;
+}
+.search-btn img{
+    
+}
+.res-num-text {
+}
+.search-querry-text {
+}
+.results_container {
+}
+.result {
+}
+.result__container {
+}
+.result__fav_btn {
+}
+.result__seller-info {
+}
+.result__product-info {
+}
+.product-name-text {
+}
+.product-price-text {
+}
+.currency-type-text {
+}
+.btn {
+}
+.marketplace_btn {
 }
