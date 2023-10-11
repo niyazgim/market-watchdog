@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
+    <title>Profile</title>
+</head>
+<body>
+    <header>
+        <div class="header__content container">
+            <a href="index.html">
+                <img src="assets/img/logo/logo.svg" alt="logo" class="header__logo">
+            </a>
+            <nav>
+                <div class="header__menu">
+                    <a href="">Тарифы</a>
+                    <a href="">Почему мы?</a>
+                    <a href="">Вопрос-ответ</a>
+                </div>
+                <div class="header__user-btns">
+                    <a href="" class="btn sign-in">Войти</a>
+                    <a href="" class="btn sign-up">Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="profile">
+        <div class="profile__content container">
+            <div class="page-name-status">
+                <h1>
+                    Профиль
+                </h1>
+                <div class="status">
+                    <img src="assets/img/icons/badge.svg" alt="badge_icon">
+                    <span>Администратор</span>
+                </div>
+            </div>
+            <div class="profile__container">
+                <div class="profile__info">
+                    <div class="profile__item">
+                        <h2>Данные</h2>
+                        <form method="post">
+                            <!-- Сделать возможность изменения после нажатия на кнопку изменить в каждом инпуте -->
+                            <div class="input_container">
+                                <input type="text" class="form__input" placeholder=" " value="niiaz280228@mail.ru">
+                                <label for="">E-mail</label>
+                            </div>
+                            <div class="input_container">
+                                <input type="password" class="form__input" placeholder=" " value="123456">
+                                <label for="">Пароль</label>
+                            </div>
+                            <input type="submit" value="Сохранить измения">
+                        </form>
+                    </div>
+                    <div class="profile__item">
+                        <h2>Действия</h2>
+                        <button class="profile__interactives_btn">
+                            <img src="assets/img/icons/change_circle--blue.svg" alt="change-subscribe_icon">
+                            <span>Сменить тарифный план</span>
+                        </button>
+                        <button class="profile__interactives_btn delete">
+                            <img src="assets/img/icons/delete--red.svg" alt="delete-acc_icon">
+                            <span>Удалить аккаунт</span>
+                        </button>
+                    </div>
+                    <div class="profile__item">
+                        <h2>Платёжные средства</h2>
+                        <div class="payments_container">
+                            <div class="payment">
+                                <div class="logo-delete_container">
+                                    <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
+                                    <button>
+                                        <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
+                                    </button>
+                                </div>
+                                <p class="card-num">1111 1111 1111 1111</p>
+                                <p class="card-holder-name">Niyaz Syntaxframe</p>
+                                <p class="card-exp-date">12/35</p>
+                            </div>
+                        </div>
+                        <div class="add-payment">
+                            <button class="add-payment__open-btn">
+                                <div class="icon-headline">
+                                    <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
+                                    <span>Новая карта</span>
+                                </div>
+                                <img src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
+                            </button>
+                            <div class="add-payment__content">
+                                <div class="input_container">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label for="">Номер карты</label>
+                                </div>
+                                <div class="input_container">
+                                    <input type="text" class="form__input" placeholder=" ">
+                                    <label for="">Имя держателя</label>
+                                </div>
+                                <div class="exp-date-card-code">
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" ">
+                                        <label for="">Имя держателя</label>
+                                    </div>
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" ">
+                                        <label for="">Имя держателя</label>
+                                    </div>
+                                </div>
+                                <div class="chechbox_container">
+                                    <input type="checkbox" name="">
+                                    <span>Сохранить после оплаты</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__subscribe-info">
+                    <h2>Подписка</h2>
+                    <div class="subscribe-info_container">
+                        <span class="subscribe-status">
+                            Подписка действительна
+                        </span>
+                        <h3 class="subscribe-name">Базовый+</h3>
+                        <p class="old-price">750</p>
+                        <p class="new-price"><span class="price-num">650</span> ₽/мес.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer__content container">
+            <div class="footer__container">
+                <div class="footer__links">
+                    <h3>Навигация по сайту</h3>
+                    <a href="">Тарифы</a>
+                    <a href="">Почему мы?</a>
+                    <a href="">Вопрос-ответ</a>
+                </div>
+                <div class="footer__links">
+                    <h3>Для пользователей</h3>
+                    <a href="">Руководство пользователя</a>
+                    <a href="">Максимальная выгода</a>
+                </div>
+                <div class="footer__links">
+                    <h3>О нас</h3>
+                    <a href="">Кто мы?</a>
+                    <a href="">Законно ли это?</a>
+                    <a href="">Информация о копмании</a>
+                </div>
+                <div class="footer__links">
+                    <h3>О нас</h3>
+                    <a href="">Как стать партнёром?</a>
+                    <a href="">Выгода для партнёров</a>
+                    <a href="">Польза для Вашего бизнеса</a>
+                </div>
+                <div class="footer__links">
+                    <h3>Принимаем</h3>
+                    <div class="payment-companies-logos_container">
+                        <img src="assets/img/payment_companies_logo/SBP_logo.svg" alt="" class="payment-company-logo">
+                        <img src="assets/img/payment_companies_logo/MIR_logo.svg" alt="" class="payment-company-logo">
+                        <img src="assets/img/payment_companies_logo/Mastercard_logo.svg" alt="" class="payment-company-logo">
+                        <img src="assets/img/payment_companies_logo/Visa_2021_logo.svg" alt="" class="payment-company-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
