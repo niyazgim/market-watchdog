@@ -4,6 +4,7 @@ function include(url) {
     script.defer = true
     document.getElementsByTagName('head')[0].appendChild(script)
 }
+include('assets/js/functions.js')
 // function getFileNameFromUrl(url) {
 //     return decodeURI(url.split('/').pop());
 // }
@@ -19,3 +20,8 @@ function getLastElementFromUrl(url) {
     return lastElement;
 }
 
+switch(getLastElementFromUrl(window.location.href)) {
+    case('admin.html'):
+        include('assets/js/admin-page__interactives.js')
+        break
+}
