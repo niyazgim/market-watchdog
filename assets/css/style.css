@@ -225,6 +225,9 @@ footer {
 #sign-up-modal .modal,#sign-in-modal .modal {
     width: 500px;
 }
+#subscribe-info-modal .modal{
+    width: 1000px;
+}
 .modal__header {
     display: grid;
     grid-template-columns: 1fr 24px;
@@ -252,6 +255,9 @@ footer {
 }
 #sign-up-modal .modal__content,#sign-in-modal .modal__content {
     padding: 45px 60px 60px 60px;
+}
+#subscribe-info-modal .modal__content{
+    padding: 45px 30px 35px 30px;
 }
 .input_container {
 }
