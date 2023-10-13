@@ -38,34 +38,36 @@ userInteractivesBtns.forEach((e)=>{
             userInteractivesBtn.classList.toggle('hidden')
             isUserModalOpened = 0
         }
-        //console.log(isUserModalOpened)
     }
 })
-// to-do FIX
-document.onclick = (e)=> {
-    let isClickedAround
-    let target = e.target
-    console.log(target)
-    userInteractivesBtns.forEach((el)=>{
-        isClickedAround = 1
-        const userModal = el.parentElement.parentElement.querySelector('.user__modal')
-        if(isUserModalOpened == 1 && (target == el || el.querySelector('img') || target == userModal || target == userModal.querySelector('span') || target == userModal.querySelector('img'))) {
-            isClickedAround = 0
+
+function checkClick(target, userInteractivesBtns) {
+    let isModalClick = false;
+
+    userInteractivesBtns.forEach((el) => {
+        const userModal = el.parentElement.parentElement.querySelector('.user__modal');
+        
+        if (target === el || target === el.querySelector('img') || target === userModal || userModal.contains(target)) {
+            isModalClick = true;
         }
-    })
-    console.log(isClickedAround)
-    if(isClickedAround == 1) {
-        userInteractivesBtns.forEach((el)=>{
-            if(el.getAttribute('style') == 'transform: rotate(-90deg);') {
-                el.animate([
-                    {transform: 'rotate(-90deg)'},
-                    {transform: 'rotate(0deg)'}
-                ], {
-                    duration:150,
-                })
-                el.style.transform = 'rotate(0deg)'
-                el.parentElement.parentElement.querySelector('.user__modal').classList.toggle('hidden')
-            }
-        })
-    }
+    });
+    return isModalClick;
 }
+document.onclick = (e) => {
+    let target = e.target;
+    if (!checkClick(target, userInteractivesBtns) && isUserModalOpened === 1) {
+        userInteractivesBtns.forEach((el) => {
+            if (el.style.transform === 'rotate(-90deg)') {
+            const userModal = el.parentElement.parentElement.querySelector('.user__modal');
+            
+            el.animate(
+                [{ transform: 'rotate(-90deg)' }, { transform: 'rotate(0deg)' }],
+                { duration: 150 }
+            );
+            
+            el.style.transform = 'rotate(0deg)';
+            userModal.classList.toggle('hidden');
+            }
+        });
+    }
+};
