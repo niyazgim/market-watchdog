@@ -47,3 +47,16 @@ function getParent(el){
 
     return null;
 }
+
+function checkClick(target, userInteractivesBtns) {
+    let isModalClick = false;
+
+    userInteractivesBtns.forEach((el) => {
+        const userModal = el.parentElement.parentElement.querySelector('.user__modal');
+        
+        if (target === el || target === el.querySelector('img') || target === userModal || userModal.contains(target)) {
+            isModalClick = true;
+        }
+    });
+    return isModalClick;
+}

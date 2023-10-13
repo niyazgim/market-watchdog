@@ -21,8 +21,8 @@
                     <a href="">Вопрос-ответ</a>
                 </div>
                 <div class="header__user-btns">
-                    <a href="" class="btn sign-in">Войти</a>
-                    <a href="" class="btn sign-up">Регистрация</a>
+                    <button id="sign-in" class="btn-modal">Войти</a>
+                    <button id="sign-up" class="btn-modal">Регистрация</a>
                 </div>
             </nav>
         </div>
@@ -187,5 +187,55 @@
             </div>
         </div>
     </footer>
+    <div id="sign-in-modal" class="interactives_modal hidden">
+        <div class="modal">
+            <div class="modal__header">
+                <h1>Вход</h1>
+                <button class="close-modal">
+                    <img src="assets/img/icons/close--white.svg" alt="close_icon">
+                </button>
+            </div>
+            <div class="modal__content">
+                <form method="post">
+                    <div class="input_container">
+                        <input type="text" class="form__input" placeholder=" ">
+                        <label for="">E-mail</label>
+                    </div>
+                    <div class="input_container">
+                        <input type="password" class="form__input" placeholder=" ">
+                        <label for="">Пароль</label>
+                    </div>
+                    <input type="submit" value="Войти">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="sign-up-modal" class="interactives_modal hidden">
+        <div class="modal">
+            <div class="modal__header">
+                <h1>Регистрация</h1>
+                <button class="close-modal">
+                    <img src="assets/img/icons/close--white.svg" alt="close_icon">
+                </button>
+            </div>
+            <div class="modal__content">
+                <form method="post">
+                    <div class="input_container">
+                        <input type="text" class="form__input" placeholder=" ">
+                        <label for="">E-mail</label>
+                    </div>
+                    <div class="input_container">
+                        <input type="password" class="form__input" placeholder=" ">
+                        <label for="">Пароль</label>
+                    </div>
+                    <div class="input_container">
+                        <input type="password" class="form__input" placeholder=" ">
+                        <label for="">Повторите пароль</label>
+                    </div>
+                    <input type="submit" value="Войти">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

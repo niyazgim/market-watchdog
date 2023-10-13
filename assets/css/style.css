@@ -14,7 +14,7 @@
     --input-border-color--non-active:#E1E1E1;
     --input-text-color--non-active:#9A9A9A;
     --modal-color--light-1:#FBFBFB;
-    --modal-color--bg:#2d2c3a30;
+    --modal-color--bg:#0e0e0fec;
     --text-color--valid:#4BD12A;
     --text-color--invalid:#E82222;
     --text-color--link:#216FE5;
@@ -89,6 +89,7 @@ input {
 }
 
 input[type="submit"] {
+    border: none;
     height: fit-content;
     width: 100%;
     background: var(--corporative-color);
@@ -115,6 +116,7 @@ a.btn {
     padding: 12px 20px;
 }
 button {
+    cursor: pointer;
     border: none;
     background: none;
     outline: none;
@@ -155,11 +157,17 @@ header nav {
     align-items: center;
     gap: 15px;
 }
-.header__user-btns a.btn.sign-in {
+.header__user-btns button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.header__user-btns button#sign-in {
     background:  var(--corporative-color);
     color:var(--text-color--light-1);
 }
-.header__user-btns a.btn.sign-up {
+.header__user-btns button#sign-up {
     border: 1px solid var(--corporative-color);
 }
 
@@ -193,6 +201,61 @@ footer {
     align-items: center;
     column-gap: 10px;
     row-gap: 10px;
+}
+
+
+/* modals--full-screen */
+.interactives_modal {
+    background: var(--modal-color--bg);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.modal {
+    background: var(--text-color--light-1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+#sign-up-modal .modal,#sign-in-modal .modal {
+    width: 500px;
+}
+.modal__header {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    align-items: center;
+    width: 100%;
+    padding: 12px 17px;
+    background: var(--corporative-color);
+}
+.modal__header h1 {
+    color: var(--text-color--light-1);
+    font-size: 26px;
+    font-weight: 600;
+}
+.close-modal {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.close-modal img {
+    width: 18px;
+    height: 18px;
+}
+#sign-up-modal .modal__content,#sign-in-modal .modal__content {
+    padding: 45px 60px 60px 60px;
+}
+.input_container {
+}
+.form__input {
 }
 
 

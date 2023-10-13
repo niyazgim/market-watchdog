@@ -40,19 +40,6 @@ userInteractivesBtns.forEach((e)=>{
         }
     }
 })
-
-function checkClick(target, userInteractivesBtns) {
-    let isModalClick = false;
-
-    userInteractivesBtns.forEach((el) => {
-        const userModal = el.parentElement.parentElement.querySelector('.user__modal');
-        
-        if (target === el || target === el.querySelector('img') || target === userModal || userModal.contains(target)) {
-            isModalClick = true;
-        }
-    });
-    return isModalClick;
-}
 document.onclick = (e) => {
     let target = e.target;
     if (!checkClick(target, userInteractivesBtns) && isUserModalOpened === 1) {
