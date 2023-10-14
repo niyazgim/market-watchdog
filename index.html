@@ -95,7 +95,7 @@
                         <p class="plan__price">
                             500 ₽/мес.
                         </p>
-                        <button class="plan__btn">
+                        <button id="subscribe-info" class="plan__btn btn-modal">
                             Оформить
                         </button>
                     </div>
@@ -187,7 +187,7 @@
             </div>
         </div>
     </footer>
-    <div id="subscribe-info-modal" class="interactives_modal">
+    <div id="subscribe-info-modal" class="interactives_modal hidden">
         <div class="modal">
             <div class="modal__header">
                 <h1>Оплата тарифа</h1>
@@ -196,17 +196,115 @@
                 </button>
             </div>
             <div class="modal__content">
-                <form method="post">
-                    <div class="input_container">
-                        <input type="text" class="form__input" placeholder=" ">
-                        <label for="">E-mail</label>
+                <h2 class="subscribe__name">
+                    Базовый+
+                </h2>
+                <p class="subscribe__desc">
+                    Экономьте без ограничений.
+                </p>
+                <div class="subscribe__benefits">
+                    <div class="benefit">
+                        <img src="assets/img/icons/all_inclusive--corporative-color.svg" alt="infinite_icon">
+                        <span>Безлимитные переходы</span>
                     </div>
-                    <div class="input_container">
-                        <input type="password" class="form__input" placeholder=" ">
-                        <label for="">Пароль</label>
+                    <div class="benefit">
+                        <img src="assets/img/icons/heart_plus--corporative-color.svg" alt="heart-plus_icon">
+                        <span>Можно добавлять в избранное</span>
                     </div>
-                    <input type="submit" value="Войти">
-                </form>
+                </div>
+                <section class="ordering-pay">
+                    <div class="ordering-pay__content">
+                        <h3>Способ оплаты</h3>
+                        <div class="payments-total_container">
+                            <div class="ordering-payments">
+                                <h4>Промокод</h4>
+                                <form class="promo-code_form" method="post">
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" ">
+                                        <label for="">Введите промокод</label>
+                                    </div>
+                                    <button class="activate-promo-code_btn">Активировать</button>
+                                </form>
+                                <div class="pay-methods">
+                                    <button class="pay-method active">
+                                        <img src="assets/img/payment_companies_logo/SBP_logo.svg" alt="">
+                                    </button>
+                                    <button class="pay-method">
+                                        <p>Банковской картой</p>
+                                        <div class="payment-logos_container">
+                                            <img src="assets/img/payment_companies_logo/MIR_logo.svg" alt="MIR_logo">
+                                            <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo--no-label">
+                                            <img src="assets/img/payment_companies_logo/Visa_2021_logo.svg" alt="Visa_2021_logo">
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="payments_container">
+                                    <div class="payment">
+                                        <div class="logo-delete_container">
+                                            <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
+                                            <button>
+                                                <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
+                                            </button>
+                                        </div>
+                                        <p class="card-num">1111 1111 1111 1111</p>
+                                        <p class="card-holder-name">Niyaz Syntaxframe</p>
+                                        <p class="card-exp-date">12/35</p>
+                                    </div>
+                                </div>
+                                <div class="add-payment">
+                                    <button class="add-payment__open-btn">
+                                        <div class="icon-headline">
+                                            <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
+                                            <span>Новая карта</span>
+                                        </div>
+                                        <img src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
+                                    </button>
+                                    <div class="add-payment__content">
+                                        <div class="input_container">
+                                            <input type="text" class="form__input" placeholder=" ">
+                                            <label for="">Номер карты</label>
+                                        </div>
+                                        <div class="input_container">
+                                            <input type="text" class="form__input" placeholder=" ">
+                                            <label for="">Имя держателя</label>
+                                        </div>
+                                        <div class="exp-date-card-code">
+                                            <div class="input_container">
+                                                <input type="text" class="form__input" placeholder=" ">
+                                                <label for="">Имя держателя</label>
+                                            </div>
+                                            <div class="input_container">
+                                                <input type="text" class="form__input" placeholder=" ">
+                                                <label for="">Имя держателя</label>
+                                            </div>
+                                        </div>
+                                        <div class="chechbox_container">
+                                            <input type="checkbox" name="">
+                                            <span>Сохранить после оплаты</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div class="total__text_container">
+                                    <p class="total-text">Итого:</p>
+                                    <div class="total__price_container">
+                                        <p class="total__old-price">
+                                            750
+                                        </p>
+                                        <p class="total__actual-price">
+                                            650 <span class="price-currency-period">₽/мес.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="pay-btn">
+                                    Оплатить
+                                </button>
+                                <p class="mini-text">Оплачивая услугу, Вы соглашаетесь с <span><a class="mini-text__link" href="">Политикой конфиденциальности</a></span>,<span><a class="mini-text__link" href="">Политикой обработки персональных данных</a></span> и с <span><a class="mini-text__link" href="">Политикой использования сервиса</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>

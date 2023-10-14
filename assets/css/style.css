@@ -259,9 +259,167 @@ footer {
 #subscribe-info-modal .modal__content{
     padding: 45px 30px 35px 30px;
 }
-.input_container {
+#subscribe-info-modal.interactives_modal {
+    overflow: auto;
+    padding: 100px 0;
+    align-items: flex-start;
 }
-.form__input {
+.subscribe__name {
+    font-size: 40px;
+    font-weight: 600;
+}
+.subscribe__desc {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.subscribe__benefits {
+    margin-top: 30px;
+}
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.benefit + .benefit {
+    margin-top: 18px;
+}
+.benefit img {
+    width: 40px;
+    height: 40px;
+}
+.benefit span {
+    font-size: 26px;
+    font-weight: 500;
+}
+.ordering-pay {
+    padding-top: 45px;
+}
+.ordering-pay h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.ordering-pay h4 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.ordering-pay__content {
+    margin-top: 20px;
+}
+.payments-total_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 515px 350px;
+    justify-content: space-between;
+}
+.promo-code_form {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 350px 150px;
+    column-gap: 15px;
+}
+.promo-code_form input {
+    margin-top: 0;
+}
+.promo-code_form .activate-promo-code_btn {
+    background: var(--corporative-color);
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color--light-1);
+}
+.pay-methods {
+    margin-top: 25px;
+    display: flex;
+    gap: 14px;
+    height: 80px;
+}
+.pay-method {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border-color--non-active);
+}
+.pay-method.active {
+    border: 1px solid var(--corporative-color);
+}
+.pay-method p {
+    font-size: 16px;
+    font-weight: 500;
+}
+.payment-logos_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.ordering-pay .payments_container {
+    margin-top: 30px;
+}
+.total {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--icons-color--dark);
+    width: 100%;
+    height: fit-content;
+}
+.total__text_container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.total-text {
+    font-size: 36px;
+    font-weight: 700;
+}
+.total__price_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.total__old-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color--dark-3);
+    text-decoration:    line-through;
+}
+.total__actual-price {
+    font-size: 36px;
+    font-weight: 500;
+}
+.price-currency-period {
+    font-size: 20px;
+    font-weight: 400;
+}
+.pay-btn {
+    padding: 10px 25px;
+    background: var(--corporative-color);
+    color: var(--text-color--light-1);
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 100px;
+    width: 100%;
+    margin-top: 20px;
+}
+.mini-text {
+    color: var(--text-color--dark-3);
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 400;
+}
+.mini-text__link {
+    color: var(--text-color--dark-3);
+    text-decoration: underline;
+}
+.mini-text__link:hover {
+    color: var(--text-color--dark-2);
+    text-decoration: underline;
 }
 
 
