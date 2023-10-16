@@ -24,6 +24,7 @@ include('assets/js/header.js')
 include('assets/js/functions.js')
 include('assets/js/modal-windows--full-screen.js')
 include('assets/js/faq.js')
+include('assets/js/payments-interactives.js')
 
 switch(getLastElementFromUrl(window.location.href)) {
     case('admin.html'):
