@@ -3,13 +3,14 @@
 
 
 :root {
+    --background-color: #ffffff;
     --corporative-color:#F24333;
     --big-table-cell-color--acent:#FEEFEE;
     --icons-color--dark:#2D2C3A;
-    --text-color--dark-1:#121212;
-    --text-color--dark-2:#555555;
-    --text-color--dark-3:#7C7C7C;
-    --text-color--light-1:#FFFFFF;
+    --text-color--1:#121212;
+    --text-color--2:#555555;
+    --text-color--3:#7C7C7C;
+    --text-color--contrast-1:#FFFFFF;
     --input-border-color--active:#616161;
     --input-border-color--non-active:#E1E1E1;
     --input-text-color--non-active:#9A9A9A;
@@ -25,7 +26,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: var(--text-color--dark-1);
+    color: var(--text-color--1);
     font-family: 'Inter', sans-serif;
 }
 
@@ -42,7 +43,7 @@ input {
     background: none;
     outline: none;
     border: 1px solid var(--input-border-color--non-active);
-    color: var(--text-color--dark-1);
+    color: var(--text-color--1);
     border-radius: 5px;
     padding: 12px 16px;
     font-size: 16px;
@@ -93,7 +94,7 @@ input[type="submit"] {
     height: fit-content;
     width: 100%;
     background: var(--corporative-color);
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     font-size: 16px;
     font-weight: 400;
     border-radius: 50px;
@@ -165,7 +166,7 @@ header nav {
 }
 .header__user-btns button#sign-in {
     background:  var(--corporative-color);
-    color:var(--text-color--light-1);
+    color:var(--text-color--contrast-1);
 }
 .header__user-btns button#sign-up {
     border: 1px solid var(--corporative-color);
@@ -218,7 +219,7 @@ footer {
     z-index: 5;
 }
 .modal {
-    background: var(--text-color--light-1);
+    background: var(--background-color);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -237,7 +238,7 @@ footer {
     background: var(--corporative-color);
 }
 .modal__header h1 {
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     font-size: 26px;
     font-weight: 600;
 }
@@ -328,7 +329,7 @@ footer {
     padding: 10px 25px;
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
 }
 .pay-methods {
     margin-top: 25px;
@@ -386,7 +387,7 @@ footer {
 .total__old-price {
     font-size: 24px;
     font-weight: 700;
-    color: var(--text-color--dark-3);
+    color: var(--text-color--3);
     text-decoration:    line-through;
 }
 .total__actual-price {
@@ -400,7 +401,7 @@ footer {
 .pay-btn {
     padding: 10px 25px;
     background: var(--corporative-color);
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     font-size: 16px;
     font-weight: 400;
     border-radius: 100px;
@@ -408,17 +409,17 @@ footer {
     margin-top: 20px;
 }
 .mini-text {
-    color: var(--text-color--dark-3);
+    color: var(--text-color--3);
     margin-top: 3px;
     font-size: 10px;
     font-weight: 400;
 }
 .mini-text__link {
-    color: var(--text-color--dark-3);
+    color: var(--text-color--3);
     text-decoration: underline;
 }
 .mini-text__link:hover {
-    color: var(--text-color--dark-2);
+    color: var(--text-color--2);
     text-decoration: underline;
 }
 
@@ -504,7 +505,7 @@ footer {
     width: 100%;
     border-radius: 100px;
     background: var(--corporative-color);
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     border: none;
     display: flex;
     justify-content: center;
@@ -529,7 +530,7 @@ footer {
     font-size: 26px;
     font-weight: 600;
     background: var(--corporative-color);
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     margin-bottom: 42px;
     border-radius: 10px 10px 0 0;
 }
@@ -544,23 +545,34 @@ footer {
     margin-top: 12px;
 }
 .faq__item {
+    position: relative;
     width: 600px;
     border-radius: 10px;
     border: 1px solid var(--corporative-color);
     padding: 16px;
+    transition: all 0.3s ease-out;
+}
+.faq__answer{
+    position: absolute;
+    top: 0px;
+    opacity: 0%;
 }
 .faq__question-btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none; 
 }
 .faq__question {
+    background: var(--background-color);
     font-size: 24px;
     font-weight: 500;
+    z-index: 1;
 }
-.faq__answer {
-    margin-top: 10px;
-}
+
 .faq__btn {
     background: none;
     border: none;
@@ -608,7 +620,7 @@ button.upload-more {
     gap: 10px;
 }
 button.upload-more p {
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
     font-size: 14px;
     font-weight: 400;
 }
@@ -646,7 +658,7 @@ button.upload-more p {
     align-items: center;
     gap: 5px;
     padding-inline: 7px;
-    background: var(--text-color--light-1);
+    background: var(--background-color);
     position: absolute;
     top: -12px;
     left: 30px;
@@ -744,7 +756,7 @@ button.upload-more p {
     height: 16px;
 }
 .marketplace_btn p {
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
 }
 
 
@@ -810,7 +822,7 @@ button.upload-more p {
 }
 .old-price {
     margin-top: 20px;
-    color: var(--text-color--dark-2);
+    color: var(--text-color--2);
     font-size: 24px;
     font-weight: 400;
     text-decoration:line-through;
@@ -934,7 +946,7 @@ button.upload-more p {
 .icon-headline > span {
     font-size: 16px;
     font-weight: 500;
-    color: var(--text-color--light-1);
+    color: var(--text-color--contrast-1);
 }
 .add-payment__content {
     width: 100%;
@@ -1004,7 +1016,7 @@ button.upload-more p {
     padding-inline: 12px;
     border-radius: 5px;
     border: 1px solid var(--input-border-color--non-active);
-    background: var(--text-color--light-1);
+    background: var(--background-color);
     height: 100%;
 }
 .user__interactives_btn {
@@ -1039,7 +1051,7 @@ button.upload-more p {
     padding-inline: 12px;
     border-radius: 5px;
     border: 1px solid var(--input-border-color--non-active);
-    background: var(--text-color--light-1);
+    background: var(--background-color);
     height: 100%;
 }
 .admin__container .user:nth-child(4n-1) .user__email-interactives,.admin__container .user:nth-child(4n-1) .user__subscribe,.admin__container .user:nth-child(4n) .user__email-interactives,.admin__container .user:nth-child(4n) .user__subscribe{
