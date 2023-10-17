@@ -121,6 +121,10 @@ button {
     border: none;
     background: none;
     outline: none;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none;
 }
 
 h1 {
@@ -918,22 +922,13 @@ button.upload-more p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 16px 16px 0 0;
+    border-radius: 16px;
     height: 50px;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none;
 }
-.add-payment__open-btn opened{
-    width: 100%;
-    background: var(--icons-color--dark);
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 16px 16px 0 0;
-    height: 50px;
-}
-/* @keyframes add-payment-btn-opening {
-    
-} */
 .icon-headline {
     display: flex;
     align-items: center;
@@ -949,18 +944,27 @@ button.upload-more p {
     color: var(--text-color--contrast-1);
 }
 .add-payment__content {
+    transition: all 0.3s ease-out;
     width: 100%;
-    padding: 12px 16px;
-    padding-top: 20px;
+    padding: 0;
     border-radius: 0 0 16px 16px;
-    border: 1px solid var(--icons-color--dark);
+    border: none;
     border-top: none;
+}
+.add-payment__form {
+    display: none;
+    width: 100%;
+    opacity: 0%;
+}
+.add-payment__form.opened{
+    display: block;
+    opacity: 100%;
 }
 .exp-date-card-code {
     margin-top: 14px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2,210px);
+    grid-template-columns: repeat(2,1fr);
     column-gap: 10px;
 }
 .exp-date-card-code .input_container {
