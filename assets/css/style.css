@@ -744,20 +744,29 @@ button.upload-more p {
 .marketplace_btn {
     height: 35px;
     padding-inline: 12px;
-    width: fit-content;
+    border-radius: 100px;
+    position: relative;
+    background: linear-gradient(262deg, #7700A3 11.15%, #CB01B8 91.36%);
+    width: 50px;
     display: flex;
     align-items: center;
-    gap: 5px;
-    border-radius: 100px;
-    background: linear-gradient(262deg, #7700A3 11.15%, #CB01B8 91.36%);
-    -ms-user-select: none; 
-    -moz-user-select: none; 
-    -webkit-user-select: none; 
-    user-select: none; 
+    transition: all 0.3s ease-out;
+}
+.marketplace_btn:hover{
+    width: 65px;
+}
+.marketplace_btn:hover img{
+    left: 40px;
+    opacity: 100%;
 }
 .marketplace_btn img {
+    transition: all 0.3s ease-out;
     width: 16px;
     height: 16px;
+    top: calc(50% - 8px);
+    left: 12px;
+    position: absolute;
+    opacity: 0%;
 }
 .marketplace_btn p {
     color: var(--text-color--contrast-1);
