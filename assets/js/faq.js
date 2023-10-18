@@ -1,44 +1,59 @@
-const faqBtns = document.querySelectorAll('.faq__btn')
+const faqBtns = document.querySelectorAll('.faq__item')
 
 faqBtns.forEach((e)=>{
-    const faqContainer = e.parentElement.parentElement
+    const faqStartHeight = e.offsetHeight + Number((getStyles(e).borderTopWidth).slice(0,-2))
     e.onclick = () => {
-        if(faqContainer.classList.contains('closed')) {
-            e.querySelector('img').animate([
+        const faqOpenedHeight = faqStartHeight + Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getStyles(e.querySelector('.faq__answer')).marginTop).slice(0,-2))
+        const topPos = Number((getStyles(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getStyles(e).paddingTop).slice(0,-2))
+        console.log(topPos)
+        if(e.classList.contains('closed')) {
+            e.querySelector('.faq__icon').animate([
                 {transform: 'rotate(0deg)'},
                 {transform: 'rotate(90deg)'}
             ], {
                 duration:200,
             })
-            e.querySelector('img').style.transform = 'rotate(90deg)'
-            faqContainer.querySelector('.faq__answer').animate([
-                {top: '0px',opacity: '0%'},
-                {top: '50px',opacity: '100%'}
+            e.querySelector('.faq__icon').style.transform = 'rotate(90deg)'
+            e.animate([
+                {height: `${faqStartHeight}px`},
+                {height: `${faqOpenedHeight}px`}
             ], {
                 duration:200,
             })
-            faqContainer.querySelector('.faq__answer').style.top = '50px'
-            faqContainer.querySelector('.faq__answer').style.opacity = '100%'
-            faqContainer.style.height = (63 + Number((getStyles(faqContainer.querySelector('.faq__answer')).height).slice(0,-2))) + 'px'
+            e.querySelector('.faq__answer').animate([
+                {top: '0px',opacity: '0%'},
+                {top: `${topPos}px`,opacity: '100%'}
+            ], {
+                duration:250,
+            })
+            e.querySelector('.faq__answer').style.top = `${topPos}px`
+            e.querySelector('.faq__answer').style.opacity = '100%'
+            e.style.height = faqOpenedHeight + 'px'
         }
         else {
-            e.querySelector('img').animate([
+            e.querySelector('.faq__icon').animate([
                 {transform: 'rotate(90deg)'},
                 {transform: 'rotate(0deg)'}
             ], {
                 duration:200,
             })
-            e.querySelector('img').style.transform = 'rotate(0deg)'
-            faqContainer.querySelector('.faq__answer').animate([
-                {top: '50px',opacity: '100%'},
+            e.querySelector('.faq__icon').style.transform = 'rotate(0deg)'
+            e.animate([
+                {height: `${faqOpenedHeight}px`},
+                {height: `${faqStartHeight}px`}
+            ], {
+                duration:300,
+            })
+            e.querySelector('.faq__answer').animate([
+                {top: `${topPos}px`,opacity: '100%'},
                 {top: '0px',opacity: '0%'}
             ], {
-                duration:200,
+                duration:250,
             })
-            faqContainer.querySelector('.faq__answer').style.top = '0px'
-            faqContainer.querySelector('.faq__answer').style.opacity = '0%'
-            faqContainer.style.height = 63 + 'px'
+            e.querySelector('.faq__answer').style.top = '0px'
+            e.querySelector('.faq__answer').style.opacity = '0%'
+            e.style.height = faqStartHeight + 'px'
         }
-        faqContainer.classList.toggle('closed')
+        e.classList.toggle('closed')
     }
 })
