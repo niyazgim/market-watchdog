@@ -88,8 +88,34 @@ input {
 .form__input:focus {
     border: 1px solid var(--corporative-color);
 }
+.form__input.invalid {
+    border: 1px solid var(--text-color--invalid);
+}
+.input__err-img {
+    height: 100%;
+    display: flex;
+    width: fit-content;
+    position: absolute;
+    right: 7px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.input__err-img img {
+    width: 20px;
+    height: 20px;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none;
+}
+.input__status-text {
+    margin-top: 3px;
+    font-size: 14px;
+    color: var(--text-color--invalid);
+}
 
-input[type="submit"] {
+input[type="submit"],button[type="submit"] {
     border: none;
     height: fit-content;
     width: 100%;
@@ -324,8 +350,12 @@ footer {
     grid-template-columns: 350px 150px;
     column-gap: 15px;
 }
-.promo-code_form input {
+.promo-code_form .input_container{
     margin-top: 0;
+    height: 42px;
+}
+.promo-code_form .input_container label{
+    background: var(--background-color);
 }
 .promo-code_form .activate-promo-code_btn {
     background: var(--corporative-color);
@@ -334,6 +364,8 @@ footer {
     font-size: 14px;
     font-weight: 400;
     color: var(--text-color--contrast-1);
+    margin: 0;
+    height: 42px;
 }
 .pay-methods {
     margin-top: 25px;

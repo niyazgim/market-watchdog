@@ -23,10 +23,13 @@ include('assets/js/header.js')
 include('assets/js/plans-modal-content.js')
 include('assets/js/functions.js')
 include('assets/js/modal-windows--full-screen.js')
-include('assets/js/faq.js')
 include('assets/js/payments-interactives.js')
+include('assets/js/promo-code-enter.js')
 
 switch(getLastElementFromUrl(window.location.href)) {
+    case('index.html'):
+        include('assets/js/faq.js')
+        break
     case('admin.html'):
         include('assets/js/admin-page__interactives.js')
         break
