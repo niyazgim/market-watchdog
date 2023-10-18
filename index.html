@@ -62,7 +62,7 @@
                         <p class="plan__price">
                             <span class="price-num">500</span> ₽/мес.
                         </p>
-                        <button class="plan__btn">
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-name="base">
                             Оформить
                         </button>
                     </div>
@@ -77,23 +77,23 @@
                             Находите лучшие цены и экономьте на покупках.
                         </p>
                         <p class="plan__price">
-                            500 ₽/мес.
+                            <span class="price-num">650</span> ₽/мес.
                         </p>
-                        <button id="subscribe-info" class="plan__btn btn-modal">
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-name="basePlus">
                             Оформить
                         </button>
                     </div>
                 </div>
                 <div class="plan">
                     <div class="plan__text">
-                        <h3>Базовый</h3>
+                        <h3>Бизнес</h3>
                         <p class="plan__description">
-                            Находите лучшие цены и экономьте на покупках.
+                            Для тех, кто хочет делать это профессионально.
                         </p>
                         <p class="plan__price">
-                            500 ₽/мес.
+                            <span class="price-num">1000</span> ₽/мес.
                         </p>
-                        <button class="plan__btn">
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-name="business">
                             Оформить
                         </button>
                     </div>
@@ -207,9 +207,9 @@
                                         <input type="text" class="form__input" placeholder=" ">
                                         <label for="">Введите промокод</label>
                                     </div>
-                                    <button class="activate-promo-code_btn">Активировать</button>
+                                    <button type="submit" class="activate-promo-code_btn">Активировать</button>
                                 </form>
-                                <div class="pay-methods">
+                                <!-- <div class="pay-methods">
                                     <button class="pay-method active">
                                         <img src="assets/img/payment_companies_logo/SBP_logo.svg" alt="">
                                     </button>
@@ -221,53 +221,55 @@
                                             <img src="assets/img/payment_companies_logo/Visa_2021_logo.svg" alt="Visa_2021_logo">
                                         </div>
                                     </button>
-                                </div>
-                                <div class="payments_container">
-                                    <div class="payment">
-                                        <div class="logo-delete_container">
-                                            <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
-                                            <button>
-                                                <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
-                                            </button>
+                                </div> -->
+                                <div class="payment--current" id="bankCard">
+                                    <div class="payments_container">
+                                        <div class="payment">
+                                            <div class="logo-delete_container">
+                                                <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
+                                                <button>
+                                                    <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
+                                                </button>
+                                            </div>
+                                            <p class="card-num">1111 1111 1111 1111</p>
+                                            <p class="card-holder-name">Niyaz Syntaxframe</p>
+                                            <p class="card-exp-date">12/35</p>
                                         </div>
-                                        <p class="card-num">1111 1111 1111 1111</p>
-                                        <p class="card-holder-name">Niyaz Syntaxframe</p>
-                                        <p class="card-exp-date">12/35</p>
                                     </div>
-                                </div>
-                                <div class="add-payment">
-                                    <button class="add-payment__open-btn">
-                                        <div class="icon-headline">
-                                            <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
-                                            <span>Новая карта</span>
+                                    <div class="add-payment">
+                                        <button class="add-payment__open-btn">
+                                            <div class="icon-headline">
+                                                <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
+                                                <span>Новая карта</span>
+                                            </div>
+                                            <img class="add-payment__btn-img" src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
+                                        </button>
+                                        <div class="add-payment__content">
+                                            <form method="post" class="add-payment__form">
+                                                <div class="input_container">
+                                                    <input type="text" class="form__input" placeholder=" ">
+                                                    <label for="">Номер карты</label>
+                                                </div>
+                                                <div class="input_container">
+                                                    <input type="text" class="form__input" placeholder=" ">
+                                                    <label for="">Имя держателя</label>
+                                                </div>
+                                                <div class="exp-date-card-code">
+                                                    <div class="input_container">
+                                                        <input type="text" class="form__input" placeholder=" ">
+                                                        <label for="">Срок действия</label>
+                                                    </div>
+                                                    <div class="input_container">
+                                                        <input type="text" class="form__input" placeholder=" ">
+                                                        <label for="">CVV/CVC</label>
+                                                    </div>
+                                                </div>
+                                                <div class="chechbox_container">
+                                                    <input type="checkbox" name="">
+                                                    <span>Сохранить после оплаты</span>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <img class="add-payment__btn-img" src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
-                                    </button>
-                                    <div class="add-payment__content">
-                                        <form method="post" class="add-payment__form">
-                                            <div class="input_container">
-                                                <input type="text" class="form__input" placeholder=" ">
-                                                <label for="">Номер карты</label>
-                                            </div>
-                                            <div class="input_container">
-                                                <input type="text" class="form__input" placeholder=" ">
-                                                <label for="">Имя держателя</label>
-                                            </div>
-                                            <div class="exp-date-card-code">
-                                                <div class="input_container">
-                                                    <input type="text" class="form__input" placeholder=" ">
-                                                    <label for="">Срок действия</label>
-                                                </div>
-                                                <div class="input_container">
-                                                    <input type="text" class="form__input" placeholder=" ">
-                                                    <label for="">CVV/CVC</label>
-                                                </div>
-                                            </div>
-                                            <div class="chechbox_container">
-                                                <input type="checkbox" name="">
-                                                <span>Сохранить после оплаты</span>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
