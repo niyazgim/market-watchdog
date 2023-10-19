@@ -16,5 +16,8 @@ headerElem.innerHTML = `
             <button id="sign-up" class="btn-modal">Регистрация</a>
         </div>
     </nav>
+    <button class="burger-menu_btn">
+        <img src="assets/img/icons/menu.svg" alt="burger-menu_icon">
+    </button>
 </div>
 `

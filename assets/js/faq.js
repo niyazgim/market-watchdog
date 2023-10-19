@@ -5,6 +5,7 @@ faqBtns.forEach((e)=>{
     e.onclick = () => {
         const faqOpenedHeight = faqStartHeight + Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getStyles(e.querySelector('.faq__answer')).marginTop).slice(0,-2))
         const topPos = Number((getStyles(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getStyles(e).paddingTop).slice(0,-2))
+        const topPosStart = Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2))
         console.log(topPos)
         if(e.classList.contains('closed')) {
             e.querySelector('.faq__icon').animate([
@@ -18,10 +19,10 @@ faqBtns.forEach((e)=>{
                 {height: `${faqStartHeight}px`},
                 {height: `${faqOpenedHeight}px`}
             ], {
-                duration:200,
+                duration:250,
             })
             e.querySelector('.faq__answer').animate([
-                {top: '0px',opacity: '0%'},
+                {top: `-${topPosStart}px`,opacity: '0%'},
                 {top: `${topPos}px`,opacity: '100%'}
             ], {
                 duration:250,
@@ -42,11 +43,11 @@ faqBtns.forEach((e)=>{
                 {height: `${faqOpenedHeight}px`},
                 {height: `${faqStartHeight}px`}
             ], {
-                duration:300,
+                duration:250,
             })
             e.querySelector('.faq__answer').animate([
                 {top: `${topPos}px`,opacity: '100%'},
-                {top: '0px',opacity: '0%'}
+                {top: `-${topPosStart}px`,opacity: '0%'}
             ], {
                 duration:250,
             })
