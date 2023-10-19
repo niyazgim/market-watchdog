@@ -566,12 +566,14 @@ footer {
     margin-top: 12px;
 }
 .faq__item {
+    overflow: hidden;
     cursor: pointer;
     position: relative;
     width: 600px;
     border-radius: 10px;
     border: 1px solid var(--corporative-color);
     padding: 16px;
+    padding-top: 0;
     transition: all 0.3s ease-out;
 }
 .faq__answer{
@@ -580,6 +582,7 @@ footer {
     top: 0px;
     opacity: 0%;
     margin-top: 12px;
+    z-index: 1;
 }
 .faq__answer p+p {
     margin-top: 10px;
@@ -587,9 +590,15 @@ footer {
 .faq__answer p.mini-text {
     margin-top: 3px;
 }
+.faq__icon {
+    width: 22px;
+    height: 22px;
+}
 .faq__question-btn {
+    padding-top: 12px;
+    position: relative;
     background: var(--background-color);
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;

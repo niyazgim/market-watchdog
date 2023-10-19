@@ -202,17 +202,17 @@ header nav {
 }
 
 footer {
-    margin-top: 150px;
+    margin-top: 100px;
     width: 100%;
-    padding: 35px 0px 75px 0px;
+    padding: 25px 0px 50px 0px;
 }
 .footer__container {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
 }
 .footer__links {
-    max-width: 350px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -227,10 +227,13 @@ footer {
 }
 .payment-companies-logos_container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(4,1fr);
     align-items: center;
-    column-gap: 10px;
-    row-gap: 10px;
+    justify-items: center;
+    row-gap: 12px;
+}
+.payment-companies-logos_container img{
+    max-width: 75px;
 }
 
 
