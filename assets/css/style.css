@@ -85,11 +85,30 @@ input {
     font-weight: 500;
     z-index: 2;
 }
+.form__input:not(:placeholder-shown).invalid.form__input:not(:focus).invalid + label {
+    top: -10px;
+    left: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+    color: var(--text-color--invalid);
+}
+.form__input:not(:placeholder-shown).valid.form__input:not(:focus).valid + label {
+    top: -10px;
+    left: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+    color: var(--text-color--valid);
+}
 .form__input:focus {
     border: 1px solid var(--corporative-color);
 }
 .form__input.invalid {
     border: 1px solid var(--text-color--invalid);
+}
+.form__input.valid {
+    border: 1px solid var(--text-color--valid);
 }
 .input__err-img {
     height: 100%;
