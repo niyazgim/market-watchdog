@@ -514,27 +514,48 @@ footer {
     padding-top: 50px;
 }
 .plans__viewpoint {
+    margin-top: 30px;
     width: 100%;
     overflow: hidden;
 }
 .plans__container {
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: fit-content;
     align-items: flex-end;
-    column-gap: 50px;
+    padding-inline: 12px;
+}
+.plans__slider-indicator {
+    display: flex;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.slider-indicator {
+    width: 12px;
+    height: 12px;
+    background: var(--input-border-color--non-active);
+    border-radius: 50px;
+}
+.slider-indicator.active {
+    background: var(--corporative-color);
 }
 .plan {
+    width: 250px;
     padding: 12px;
     background: var(--modal-color--light-1);
     border-radius: 10px;
 }
 .plan h3 {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 600;
 }
 .plan__description {
     margin-top: 5px;
+    font-size: 14px;
 }
 .plan__price {
     margin-top: 20px;
