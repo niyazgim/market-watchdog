@@ -496,6 +496,11 @@ footer {
 .plans {
     padding-top: 100px;
 }
+.plans__viewpoint {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
 .plans__container {
     margin-top: 35px;
     display: grid;
