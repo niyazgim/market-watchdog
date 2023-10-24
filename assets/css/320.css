@@ -121,7 +121,7 @@ input[type="checkbox"] {
 }
 
 .container {
-    max-width: calc(100% - 16px);
+    max-width: calc(100% - 32px);
     width: 100%;
     margin: 0 auto;
 }
@@ -514,9 +514,21 @@ footer {
     padding-top: 50px;
 }
 .plans__viewpoint {
-    margin-top: 30px;
-    width: 100%;
-    overflow: hidden;
+    display: none;
+}
+.plans h2 {
+    margin-bottom: 24px;
+}
+.swiper-wrapper {
+    align-items: flex-end;
+    
+}
+.swiper-pagination {
+    position: static !important;
+    margin-top: 15px;
+}
+.swiper-wrapper {
+    padding-inline: 16px;
 }
 .plans__container {
     position: relative;
@@ -543,16 +555,18 @@ footer {
 .slider-indicator.active {
     background: var(--corporative-color);
 }
-.plan {
+.swiper-slide, .plan {
+    overflow: hidden;
     width: 250px;
     padding: 12px;
     background: var(--modal-color--light-1);
     border-radius: 10px;
 }
-.plan h3 {
+.swiper-slide, .plan h3 {
     font-size: 24px;
     font-weight: 600;
 }
+
 .plan__description {
     margin-top: 5px;
     font-size: 14px;
@@ -585,17 +599,34 @@ footer {
 .recommend .plan__text {
     padding-inline: 12px;
 }
+/* фиксануть зазоры */
 .plan-reccommend__header {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 12px 0;
-    font-size: 26px;
+    padding: 10px 0;
+    font-size: 18px;
     font-weight: 600;
     background: var(--corporative-color);
     color: var(--text-color--contrast-1);
-    margin-bottom: 42px;
+    margin-bottom: 12px;
     border-radius: 10px 10px 0 0;
+}
+.plan-reccommend__header::before {
+    content: '';
+    
+    position: absolute;
+    z-index: -1;
+    left: -10px;
+    top: -10px;
+    
+    display: inline-block;
+    
+    width: calc(100% + 150px);
+    height: calc(100% + 150px);
+    
+    background: var(--corporative-color);
 }
 
 .faq {

@@ -496,19 +496,25 @@ footer {
 .plans {
     padding-top: 100px;
 }
+.plans h2 {
+    margin-bottom: 35px;
+}
 .plans__viewpoint {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
+.plans .swiper {
+    display: none;
+}
 .plans__container {
-    margin-top: 35px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: flex-end;
     column-gap: 50px;
 }
 .plan {
+    overflow: hidden;
     padding: 12px;
     background: var(--modal-color--light-1);
     border-radius: 10px;
@@ -549,6 +555,7 @@ footer {
     padding-inline: 12px;
 }
 .plan-reccommend__header {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -559,6 +566,21 @@ footer {
     color: var(--text-color--contrast-1);
     margin-bottom: 42px;
     border-radius: 10px 10px 0 0;
+}
+.plan-reccommend__header::before {
+    content: '';
+    
+    position: absolute;
+    z-index: -1;
+    left: -10px;
+    top: -10px;
+    
+    display: inline-block;
+    
+    width: calc(100% + 150px);
+    height: 50px;
+    
+    background: var(--corporative-color);
 }
 
 .faq {

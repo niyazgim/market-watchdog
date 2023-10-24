@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js" defer></script>
     <title>Main page</title>
 </head>
@@ -101,12 +103,63 @@
                     </div>
                 </div>
             </div>
-            <div class="plans__slider-indicator">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="plan__text">
+                            <h3>Базовый</h3>
+                            <p class="plan__description">
+                                Находите лучшие цены и экономьте на покупках.
+                            </p>
+                            <p class="plan__price">
+                                <span class="price-num">500</span> ₽/мес.
+                            </p>
+                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="1">
+                                Оформить
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide recommend">
+                        <div class="plan-reccommend__header">
+                            Рекомендуем
+                        </div>
+                        <div class="plan__text">
+                            <h3>Базовый+</h3>
+                            <p class="plan__description">
+                                Находите лучшие цены и экономьте на покупках.
+                            </p>
+                            <p class="plan__price">
+                                <span class="price-num">650</span> ₽/мес.
+                            </p>
+                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="2">
+                                Оформить
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="plan__text">
+                            <h3>Бизнес</h3>
+                            <p class="plan__description">
+                                Для тех, кто хочет делать это профессионально.
+                            </p>
+                            <p class="plan__price">
+                                <span class="price-num">1000</span> ₽/мес.
+                            </p>
+                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="3">
+                                Оформить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+            <!-- <div class="plans__slider-indicator">
                 <button class="slider-indicator"></button>
                 <button class="slider-indicator active"></button>
                 <button class="slider-indicator"></button>
-            </div>
-        </div>
+            </div> -->
     </section>
     <section class="faq">
         <div class="faq__content container">

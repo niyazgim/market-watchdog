@@ -25,6 +25,7 @@ include('assets/js/functions.js')
 include('assets/js/modal-windows--full-screen.js')
 include('assets/js/payments-interactives.js')
 include('assets/js/promo-code-enter.js')
+include('assets/js/swiper-slider.js')
 
 switch(getLastElementFromUrl(window.location.href)) {
     case('index.html'):

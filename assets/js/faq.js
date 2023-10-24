@@ -3,7 +3,6 @@ const faqBtns = document.querySelectorAll('.faq__item')
 faqBtns.forEach((e)=>{
     let faqStartHeight = e.offsetHeight + Number((getStyles(e).borderTopWidth).slice(0,-2))
     window.addEventListener('resize',function(){
-        console.log('hui')
         faqStartHeight =  Number((getStyles(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getStyles(e).borderTopWidth).slice(0,-2)) + Number((getStyles(e).paddingBottom).slice(0,-2))
         if(e.classList.contains('closed')) {
             e.style.height = faqStartHeight + 'px'
