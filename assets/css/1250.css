@@ -556,31 +556,19 @@ footer {
 }
 .plan-reccommend__header {
     position: relative;
+    overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 12px 0;
-    font-size: 26px;
-    font-weight: 600;
-    background: var(--corporative-color);
-    color: var(--text-color--contrast-1);
+    border-bottom: 1px solid var(--corporative-color);
     margin-bottom: 42px;
-    border-radius: 10px 10px 0 0;
 }
-.plan-reccommend__header::before {
-    content: '';
-    
-    position: absolute;
-    z-index: -1;
-    left: -10px;
-    top: -10px;
-    
-    display: inline-block;
-    
-    width: calc(100% + 150px);
-    height: 50px;
-    
-    background: var(--corporative-color);
+.plan-reccommend__header p {
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--text-color--contrast-1);
+    color: var(--text-color--1);
 }
 
 .faq {

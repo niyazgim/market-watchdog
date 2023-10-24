@@ -169,13 +169,13 @@ header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
 }
 .burger-menu_btn img {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
 }
 .header__menu {
     display: flex;
@@ -527,8 +527,10 @@ footer {
     position: static !important;
     margin-top: 15px;
 }
-.swiper-wrapper {
-    padding-inline: 16px;
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: var(--corporative-color) !important;
 }
 .plans__container {
     position: relative;
@@ -599,34 +601,21 @@ footer {
 .recommend .plan__text {
     padding-inline: 12px;
 }
-/* фиксануть зазоры */
 .plan-reccommend__header {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    font-size: 18px;
-    font-weight: 600;
-    background: var(--corporative-color);
-    color: var(--text-color--contrast-1);
-    margin-bottom: 12px;
+    border-bottom: 1px solid var(--corporative-color);
+    margin-bottom: 25px;
     border-radius: 10px 10px 0 0;
 }
-.plan-reccommend__header::before {
-    content: '';
-    
-    position: absolute;
-    z-index: -1;
-    left: -10px;
-    top: -10px;
-    
-    display: inline-block;
-    
-    width: calc(100% + 150px);
-    height: calc(100% + 150px);
-    
-    background: var(--corporative-color);
+.plan-reccommend__header p {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-color--contrast-1);
+    color: var(--text-color--1);
 }
 
 .faq {

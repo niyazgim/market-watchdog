@@ -1,10 +1,11 @@
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: false,
-    spaceBetween: 15,
-    slidesPerView: 1.2,
-
+    initialSlide: 1,
+    slidesPerView: 1.25,
+    centeredSlides: true,
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
 });
