@@ -39,8 +39,7 @@ modalWindowsBtns.forEach((e) => {
         }
         currentModalWindow.querySelector('.close-modal').onclick = () => {
             currentModalWindow.classList.toggle('hidden')
-            document.body.style.overflow = ""
-            document.body.style.paddingRight = 0
+            
         }
     }
 })

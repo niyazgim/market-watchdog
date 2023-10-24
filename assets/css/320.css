@@ -153,6 +153,7 @@ h2 {
 
 header {
     padding: 15px 0;
+    position: relative;
 }
 .header__content {
     display: flex;
@@ -162,42 +163,87 @@ header {
 .header__logo {
     height: 44px;
 }
-header nav {
+.header__nav {
     display: none;
 }
-.burger-menu_btn {
+.burger-menu__btn {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
     border-radius: 50px;
 }
-.burger-menu_btn img {
-    width: 24px;
-    height: 24px;
+/* .burger-menu__btn .line {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: var(--icons-color--dark);
+}
+.burger-menu__btn .line#bl1 {
+    top:0;
+    left: -50%;
+} */
+.burger-menu.opened {
+    right: 0;
+}
+/* .burger-menu.opened .line#bl1{
+    right: 0;
+} */
+.burger-menu {
+    transition: 0.3s ease-out;
+    height: calc(100% - 78px);
+    width: 100%;
+    padding: 16px;
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    background: var(--background-color);
+    z-index: 5;
+}
+.burger-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.burger-menu__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+.burger-menu__menu a {
+    text-align: left;
+}
+.burger-menu__user-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.btn-modal {
 }
 .header__menu {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.header__user-btns {
+.header__user-btns{
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.header__user-btns button {
+.header__user-btns button, .burger-menu__user-btns button {
     padding: 12px 20px;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 400;
 }
-.header__user-btns button#sign-in {
+.header__user-btns button#sign-in, .burger-menu__user-btns button#sign-in {
     background:  var(--corporative-color);
     color:var(--text-color--contrast-1);
 }
-.header__user-btns button#sign-up {
+.header__user-btns button#sign-up, .burger-menu__user-btns button#sign-up {
     border: 1px solid var(--corporative-color);
 }
 

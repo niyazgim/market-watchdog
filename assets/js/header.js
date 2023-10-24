@@ -1,29 +1,41 @@
 const headerElem = document.querySelector('header')
 
-// headerElem.innerHTML = `
-// <div class="header__content container">
-//     <a href="index.html">
-//         <img src="assets/img/logo/logo.svg" alt="logo" class="header__logo">
-//     </a>
-//     <nav>
-//         <div class="header__menu">
-//             <a href="">Тарифы</a>
-//             <a href="">Почему мы?</a>
-//             <a href="">Вопрос-ответ</a>
-//         </div>
-//         <div class="header__user-btns">
-//             <button id="sign-in" class="btn-modal">Войти</a>
-//             <button id="sign-up" class="btn-modal">Регистрация</a>
-//         </div>
-//     </nav>
-//     <button class="burger-menu_btn">
-//         <img src="assets/img/icons/menu.svg" alt="burger-menu_icon">
-//     </button>
-// </div>
-// `
+headerElem.innerHTML = `
+<div class="header__content container">
+    <a href="index.html">
+        <img src="assets/img/logo/logo.svg" alt="logo" class="header__logo">
+    </a>
+    <nav class="header__nav">
+        <div class="header__menu">
+            <a href="">Тарифы</a>
+            <a href="">Почему мы?</a>
+            <a href="">Вопрос-ответ</a>
+        </div>
+        <div class="header__user-btns">
+            <button id="sign-in" class="btn-modal">Войти</a>
+            <button id="sign-up" class="btn-modal">Регистрация</a>
+        </div>
+    </nav>
+    <button class="burger-menu__btn">
+        <img src="assets/img/icons/menu.svg" alt="burger-menu_icon">
+        <!-- <div class="line" id="bl1"></div>
+        <div class="line" id="bl2"></div>
+        <div class="line" id="bl3"></div> -->
+    </button>
+</div>
+`
 
-const burgerMenu = document.querySelector('.burger-menu_btn')
+const burgerMenuBtn = document.querySelector('.burger-menu__btn')
+const burgerMenu = document.querySelector('.burger-menu')
 
-burgerMenu.onclick = () => {
-    
+burgerMenuBtn.onclick = () => {
+    burgerMenu.classList.toggle('opened')
+    if(burgerMenu.classList.contains('opened')) {
+        document.body.style.overflow = "hidden"
+        document.body.style.paddingRight = getScrollbarWidth() + 'px'
+    }
+    else {
+        document.body.style.overflow = ""
+        document.body.style.paddingRight = 0
+    }
 }
