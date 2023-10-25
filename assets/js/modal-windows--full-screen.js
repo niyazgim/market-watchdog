@@ -1,20 +1,21 @@
 const modalWindowsBtns = document.querySelectorAll('.btn-modal')
 
 modalWindowsBtns.forEach((e) => {
+    e.modalWindow = document.querySelector(`#${e.id}-modal`)
     e.onclick = () => {
         document.body.style.overflow = "hidden"
         document.body.style.paddingRight = getScrollbarWidth() + 'px'
-        const currentModalWindow = document.querySelector(`#${e.id}-modal`)
-        currentModalWindow.classList.toggle('hidden')
-        if(currentModalWindow.id = 'subscribe-info-modal') {
+        e.modalWindow.classList.toggle('hidden')
+        console.log(e.modalWindow)
+        if(e.modalWindow.id === 'subscribe-info-modal') {
             const planInfo = plansContent[e.dataset.planId]
 
-            currentModalWindow.querySelector('.subscribe__name').textContent = planInfo['name']
-            currentModalWindow.querySelector('.subscribe__desc').textContent = planInfo['desc']
+            e.modalWindow.querySelector('.subscribe__name').textContent = planInfo['name']
+            e.modalWindow.querySelector('.subscribe__desc').textContent = planInfo['desc']
 
             const planBenefits = planInfo['benefits'];
             if(planBenefits) {
-                const planBenefitsContainer = currentModalWindow.querySelector('.subscribe__benefits')
+                const planBenefitsContainer = e.modalWindow.querySelector('.subscribe__benefits')
                 let planBenefitsText = ''
                 for(let i of planBenefits) {
                     planBenefitsText += `
@@ -28,18 +29,19 @@ modalWindowsBtns.forEach((e) => {
 
             if(planInfo['priceOld']) {
                 priceText = `
-                    <p class="total__old-price">
+                    <span class="total__old-price">
                         ${planInfo['priceOld']}
-                    </p>
-                    <p class="total__actual-price">
-                        ${planInfo['price']} <span class="price-currency-period">₽/мес.</span>
-                    </p>`
-                currentModalWindow.querySelector('.total__price_container').innerHTML = priceText
+                    </span>
+                    ${planInfo['price']} <span class="price-currency-period">₽/мес.</span>`
+                e.modalWindow.querySelector('.total__price_container').innerHTML = priceText
             }
+            //e.modalWindow.querySelector('.total-text').textContent = `Итого ${planInfo['price']}`
+
         }
-        currentModalWindow.querySelector('.close-modal').onclick = () => {
-            currentModalWindow.classList.toggle('hidden')
-            
+        e.modalWindow.querySelector('.close-modal').onclick = () => {
+            e.modalWindow.classList.toggle('hidden')
+            document.body.style.overflow = ""
+            document.body.style.paddingRight = 0
         }
     }
 })
