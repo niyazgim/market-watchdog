@@ -780,7 +780,7 @@ footer {
     gap: 10px;
     border-radius: 100px;
     border: 1px solid var(--input-border-color--non-active);
-    width: 650px;
+    width: 100%;
     padding-right: 16px;
 }
 .search-product input[type="search"] {
@@ -872,30 +872,30 @@ button.upload-more p {
 .result__fav_btn, .result__seller-info, .result__product-info {
     border: 1px solid var(--input-border-color--non-active);
     border-radius: 5px;
-    height: 35px;
+    height: 25px;
 }
 .result__fav_btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
+    width: 25px;
 }
 .result__fav_btn img {
     -ms-user-select: none; 
     -moz-user-select: none; 
     -webkit-user-select: none; 
     user-select: none;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 .result__seller-info {
-    width: 350px;
+    width: 100%;
     display: flex;
     gap: 7px;
     align-items: center;
     padding-inline: 12px;
 }
-.result__seller-info {
+.result__seller-info p {
     font-size: 16px;
     font-weight: 400;
 }
@@ -908,7 +908,7 @@ button.upload-more p {
     user-select: none; 
 }
 .result__product-info {
-    width: 500px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -927,34 +927,23 @@ button.upload-more p {
     font-weight: 600;
 }
 .marketplace_btn {
-    height: 35px;
+    height: 25px;
     padding-inline: 12px;
     border-radius: 100px;
-    position: relative;
     background: linear-gradient(262deg, #7700A3 11.15%, #CB01B8 91.36%);
-    width: 50px;
+    width: 45px;
     display: flex;
     align-items: center;
     transition: all 0.3s ease-out;
 }
-.marketplace_btn:hover{
-    width: 65px;
-}
-.marketplace_btn:hover img{
-    left: 40px;
-    opacity: 100%;
-}
 .marketplace_btn img {
-    transition: all 0.3s ease-out;
-    width: 16px;
-    height: 16px;
-    top: calc(50% - 8px);
-    left: 12px;
+    width: 10px;
+    height: 10px;
     position: absolute;
-    opacity: 0%;
 }
 .marketplace_btn p {
     color: var(--text-color--contrast-1);
+    font-size: 10px;
 }
 
 
