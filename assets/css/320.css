@@ -980,8 +980,8 @@ button.upload-more p {
 .profile__container {
     margin-top: 35px;
     display: flex;
-    align-items: flex-start;
-    gap: 100px;
+    flex-direction: column-reverse;
+    gap: 50px;
 }
 .profile__container h2 {
     font-size: 18px;
@@ -989,10 +989,10 @@ button.upload-more p {
     margin-bottom: 15px;
 }
 .profile__item + .profile__item {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .subscribe-info_container {
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
     border: 1px solid var(--corporative-color);
     background: var(--modal-color--light-1);
@@ -1024,8 +1024,8 @@ button.upload-more p {
     font-style: normal;
     font-weight: 800;
 }
-.profile__item form:not(.add-payment__form) {
-    width: 400px;
+.profile__item {
+    width: 100%;
 }
 .profile__interactives_btn {
     display: flex;
@@ -1034,7 +1034,7 @@ button.upload-more p {
     border: 1px solid var(--text-color--link);
     border-radius: 10px;
     padding: 8px 12px;
-    width: 350px;
+    width: 100%;
 }
 .profile__interactives_btn span {
     color: var(--text-color--link);
@@ -1050,16 +1050,18 @@ button.upload-more p {
 .profile__interactives_btn + .profile__interactives_btn {
     margin-top: 10px;
 }
+
 .payments_container {
+    margin-top: 18px;
     display: grid;
-    grid-template-columns: repeat(2,205px);
-    column-gap: 16px;
-    row-gap: 16px;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 6px;
+    row-gap: 6px;
 }
 .payment {
     border-radius: 10px;
     border: 1px solid var(--input-border-color--non-active);
-    padding: 12px;
+    padding: 8px;
 }
 .logo-delete_container {
     display: flex;
@@ -1067,7 +1069,7 @@ button.upload-more p {
     justify-content: space-between;
 }
 .logo-delete_container > img {
-    height: 25px;
+    height: 16px;
 }
 .logo-delete_container > button {
     width: 20px;
@@ -1079,22 +1081,24 @@ button.upload-more p {
     height: 18px;
 }
 .card-num {
-    margin-top: 14px;
+    margin-top: 10px;
     font-variant-numeric: lining-nums tabular-nums;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 18px;
+    font-size: 11px;
     font-weight: 400;
 }
 .card-holder-name {
-    margin-top: 7px;
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 10px;
     font-weight: 400;
 }
 .card-exp-date {
-    margin-top: 5px;
-    font-size: 14px;
+    margin-top: 3px;
+    font-size: 10px;
     font-weight: 400;
 }
+
+
 .add-payment {
     margin-top: 20px;
     width: 100%;
@@ -1167,6 +1171,20 @@ button.upload-more p {
 .chechbox_container span {
     font-size: 14px;
     font-weight: 500;
+}
+.add-payment .add-payment__btn {
+    width: 100%;
+    background: var(--icons-color--dark);
+    border-radius: 50px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.add-payment .add-payment__btn span {
+    color: var(--text-color--contrast-1);
+    font-size: 16px;
 }
 
 
