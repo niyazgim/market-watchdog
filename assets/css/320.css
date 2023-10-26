@@ -949,18 +949,19 @@ button.upload-more p {
 
 /* Profile page */
 .profile {
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .profile__content h1{
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
 }
 .page-name-status {
     display: flex;
-    align-items: center;
-    gap: 35px;
+    flex-direction: column;
+    gap: 10px;
 }
 .status {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 7px;
@@ -969,12 +970,12 @@ button.upload-more p {
     border:1px solid var(--corporative-color);
 }
 .status span {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
 }
 .status img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 .profile__container {
     margin-top: 35px;
@@ -983,9 +984,9 @@ button.upload-more p {
     gap: 100px;
 }
 .profile__container h2 {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .profile__item + .profile__item {
     margin-top: 50px;
@@ -1170,53 +1171,54 @@ button.upload-more p {
 
 
 .admin {
-    padding-top: 50px;
+    padding-top: 15px;
 }
 .admin__content h1{
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 700;
 }
 .admin__content h2{
-    margin-top: 30px;
+    margin-top: 25px;
     font-size: 24px;
     font-weight: 600;
 }
 .admin__container {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 10px;
-    row-gap: 10px;
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 .user {
     display: grid;
-    column-gap: 5px;
+    column-gap: 3px;
     align-items: center;
-    height: 38px;
+    height: 28px;
     grid-template-columns: 5fr 2fr;
     position: relative;
 }
 .user__email-interactives {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding-inline: 12px;
+    gap: 3px;
     border-radius: 5px;
     border: 1px solid var(--input-border-color--non-active);
     background: var(--background-color);
     height: 100%;
+    padding-inline: 5px;
 }
 .user__interactives_btn {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .user__interactives_btn img {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
 }
 .user__email {
     display: flex;
@@ -1224,24 +1226,24 @@ button.upload-more p {
     gap: 3px;
 }
 .user__email span,.user__subscribe span{
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 400;
 }
 .user__email img,.user__subscribe img{
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
 }
 .user__subscribe {
     display: flex;
     align-items: center;
     gap: 5px;
-    padding-inline: 12px;
+    padding-inline: 7px;
     border-radius: 5px;
     border: 1px solid var(--input-border-color--non-active);
     background: var(--background-color);
     height: 100%;
 }
-.admin__container .user:nth-child(4n-1) .user__email-interactives,.admin__container .user:nth-child(4n-1) .user__subscribe,.admin__container .user:nth-child(4n) .user__email-interactives,.admin__container .user:nth-child(4n) .user__subscribe{
+.admin__container .user:nth-child(2n) .user__email-interactives, .admin__container .user:nth-child(2n) .user__subscribe {
     background: var(--big-table-cell-color--acent);
 }
 
@@ -1258,7 +1260,7 @@ button.upload-more p {
     display: flex;
     gap: 7px;
     align-items: center;
-    padding: 14px 16px;
+    padding: 8px 12px;
     -ms-user-select: none; 
     -moz-user-select: none; 
     -webkit-user-select: none; 
@@ -1266,7 +1268,7 @@ button.upload-more p {
     transition: 0.15s ease-in;
 }
 .user__modal-item > span{
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 400;
     -ms-user-select: none; 
     -moz-user-select: none; 
@@ -1277,8 +1279,8 @@ button.upload-more p {
     background:var(--button-color--hover);
 }
 .user__modal-item > img{
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
 }
 .user__modal-item.delete-user span{
     color: var(--text-color--invalid);

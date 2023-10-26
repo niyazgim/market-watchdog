@@ -20,6 +20,7 @@ function include(url) {
 }
 
 include('assets/js/header.js')
+include('assets/js/footer.js')
 include('assets/js/plans-modal-content.js')
 include('assets/js/functions.js')
 include('assets/js/modal-windows--full-screen.js')
