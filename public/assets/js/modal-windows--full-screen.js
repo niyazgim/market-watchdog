@@ -6,7 +6,6 @@ modalWindowsBtns.forEach((e) => {
         document.body.style.overflow = "hidden"
         document.body.style.paddingRight = getScrollbarWidth() + 'px'
         e.modalWindow.classList.toggle('hidden')
-        console.log(e.modalWindow)
         if(e.modalWindow.id === 'subscribe-info-modal') {
             const planInfo = plansContent[e.dataset.planId]
 
