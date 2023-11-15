@@ -1,5 +1,7 @@
 // const productsModel = require('../models/mainModule')
 const { chromium } = require('playwright')
+// the issue of none applying model is that it has 'extention' was ,js not .js 😂
+// const mainModule = require('../models/mainModel')
 
 const getProducts = async (req) => {
     console.log(req)
@@ -14,12 +16,16 @@ const getProducts = async (req) => {
 
     // const products = await page.$$eval('.product-card-list article.product-card', (elements) => {
     //     return elements.map((element) => {
+    //         // need to fix an prices and rating count parse mistake
     //         const id = element.dataset.id
+    //         const link = element.querySelector('a.product-card__link').href.trim()
     //         const name = element.querySelector('h2.product-card__brand-wrap').textContent.trim()
-    //         const price = element.querySelector('.price__lower-price').textContent.trim()
-    //         const priceOld = element.querySelector('.price__wrap > del').textContent.trim()
-    //         const rateNum = (parseFloat(element.querySelector('.address-rate-mini').textContent.trim()) / parseInt(element.querySelector('.product-card__count').textContent.trim())).toFixed(5)
-    //         return { id, name, price, priceOld, rateNum }
+    //         const price = parseFloat(element.querySelector('.price__lower-price').textContent.replace(/[^\d.]/g, ''))
+    //         const priceOld = parseFloat(element.querySelector('.price__wrap > del').textContent.replace(/[^\d.]/g, ''))
+    //         const rating = parseFloat(element.querySelector('.address-rate-mini').textContent.replace(/[^\d.]/g, ''))
+    //         const reviews_count = parseFloat(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))
+    //         const rateRelevance = (parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) / parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))).toFixed(5)
+    //         return { id, link, name, price, priceOld, rating, reviews_count, rateRelevance }
     //     })
     // })
 
