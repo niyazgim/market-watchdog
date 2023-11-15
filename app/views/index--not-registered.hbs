@@ -1,325 +1,306 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js" defer></script>
-    <title>Main page</title>
-</head>
-<body>
-    <header>
-    </header>
-    <!-- <section class="banner">
-        <div class="banner__content container">
-            <div class="banner__text">
-                <div class="banner__item">
-                    <h1>Найди лучшую цену</h1>
-                    <span class="banner__subtitle">в 2 клика</span>
-                </div>
-                <div class="banner__item">
-                    <h1>Добавляй в избранное</h1>
-                    <span class="banner__subtitle">и отслеживай цену</span>
-                </div>
-                <div class="banner__item">
-                    <h1>Получай выгоду</h1>
-                    <span class="banner__subtitle">с первого месяца использования</span>
-                </div>
+<!-- <section class="banner">
+    <div class="banner__content container">
+        <div class="banner__text">
+            <div class="banner__item">
+                <h1>Найди лучшую цену</h1>
+                <span class="banner__subtitle">в 2 клика</span>
             </div>
-            <img src="assets/img/banner/banner-img.png" alt="banner-img" class="banner__img">
-        </div>
-    </section> -->
-    <section class="benefits">
-        <div class="benefits__content container">
-            <h2>Почему мы?</h2>
-            <div class="benefits__container">
-                <div class="benefits_item">
-                    <img src="assets/img/icons/emoji_objects.svg" alt="lamp_icon">
-                    <span>Простота использования</span>
-                </div>
-                <div class="benefits_item">
-                    <img src="assets/img/icons/payments.svg" alt="money_icon">
-                    <span>Тарифные планы всего от 300 ₽/мес.</span>
-                </div>
-                <div class="benefits_item">
-                    <img src="assets/img/icons/bar_chart_4_bars.svg" alt="chart_icon">
-                    <span>Выгода в первый месяц использования</span>
-                </div>
+            <div class="banner__item">
+                <h1>Добавляй в избранное</h1>
+                <span class="banner__subtitle">и отслеживай цену</span>
+            </div>
+            <div class="banner__item">
+                <h1>Получай выгоду</h1>
+                <span class="banner__subtitle">с первого месяца использования</span>
             </div>
         </div>
-    </section>
-    <section class="plans">
-        <div class="plans__content">
-            <h2 class="container">Тарифные планы</h2>
-            <div class="plans__viewpoint">
-                <div class="plans__container">
-                    <div class="plan">
-                        <div class="plan__text">
-                            <h3>Базовый</h3>
-                            <p class="plan__description">
-                                Находите лучшие цены и экономьте на покупках.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">500</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="1">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                    <div class="plan recommend">
-                        <div class="plan-reccommend__header">
-                            <p>Рекомендуем</p>
-                        </div>
-                        <div class="plan__text">
-                            <h3>Базовый+</h3>
-                            <p class="plan__description">
-                                Находите лучшие цены и экономьте на покупках.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">650</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="2">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                    <div class="plan">
-                        <div class="plan__text">
-                            <h3>Бизнес</h3>
-                            <p class="plan__description">
-                                Для тех, кто хочет делать это профессионально.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">1000</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="3">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <img src="assets/img/banner/banner-img.png" alt="banner-img" class="banner__img">
+    </div>
+</section> -->
+<section class="benefits">
+    <div class="benefits__content container">
+        <h2>Почему мы?</h2>
+        <div class="benefits__container">
+            <div class="benefits_item">
+                <img src="assets/img/icons/emoji_objects.svg" alt="lamp_icon">
+                <span>Простота использования</span>
             </div>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="plan__text">
-                            <h3>Базовый</h3>
-                            <p class="plan__description">
-                                Находите лучшие цены и экономьте на покупках.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">500</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="1">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide recommend">
-                        <div class="plan-reccommend__header">
-                            <div class="plan-reccommend__header-bg"></div>
-                            Рекомендуем
-                        </div>
-                        <div class="plan__text">
-                            <h3>Базовый+</h3>
-                            <p class="plan__description">
-                                Находите лучшие цены и экономьте на покупках.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">650</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="2">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="plan__text">
-                            <h3>Бизнес</h3>
-                            <p class="plan__description">
-                                Для тех, кто хочет делать это профессионально.
-                            </p>
-                            <p class="plan__price">
-                                <span class="price-num">1000</span> ₽/мес.
-                            </p>
-                            <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="3">
-                                Оформить
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+            <div class="benefits_item">
+                <img src="assets/img/icons/payments.svg" alt="money_icon">
+                <span>Тарифные планы всего от 300 ₽/мес.</span>
             </div>
-        </div>
-            <!-- <div class="plans__slider-indicator">
-                <button class="slider-indicator"></button>
-                <button class="slider-indicator active"></button>
-                <button class="slider-indicator"></button>
-            </div> -->
-    </section>
-    <section class="faq">
-        <div class="faq__content container">
-            <h2>Вопрос-ответ</h2>
-            <div class="faq__item closed">
-                <div class="faq__question-btn">
-                    <span class="faq__question">Почему сервис платный?</span>
-                    <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
-                </div>
-                <div class="faq__answer">
-                    <p>Вы платите нам за сервис, который заточен на Вашу выгоду при его использовании</p>
-                </div>
-            </div>
-            <div class="faq__item closed">
-                <div class="faq__question-btn">
-                    <span class="faq__question">Для кого данный сервис?</span>
-                    <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
-                </div>
-                <div class="faq__answer">
-                    <p>Благодаря простоте сервиса, он подходит для всех - от простых пользователей - до предпринимателей</p>
-                </div>
-            </div>
-            <div class="faq__item closed">
-                <div class="faq__question-btn">
-                    <span class="faq__question">В чём выгода использования?</span>
-                    <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
-                </div>
-                <div class="faq__answer">
-                    <p>В течении первого месяца использования пользователь окупает её и получает выгоду от использования.</p>
-                    <p>Среднее время окупаемости - 2 недели*</p>
-                    <p class="mini-text">*на основе данных опроса</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-    </footer>
-    <div id="subscribe-info-modal" class="interactives_modal hidden">
-        <div class="modal">
-            <div class="modal__header">
-                <h1>Оплата тарифа</h1>
-                <button class="close-modal">
-                    <img src="assets/img/icons/close--white.svg" alt="close_icon">
-                </button>
-            </div>
-            <div class="modal__content">
-                <h2 class="subscribe__name">
-                    Базовый+
-                </h2>
-                <p class="subscribe__desc">
-                    Экономьте без ограничений.
-                </p>
-                <div class="subscribe__benefits">
-                    <div class="benefit">
-                        <img src="assets/img/icons/all_inclusive--corporative-color.svg" alt="infinite_icon">
-                        <span>Безлимитные переходы</span>
-                    </div>
-                    <div class="benefit">
-                        <img src="assets/img/icons/heart_plus--corporative-color.svg" alt="heart-plus_icon">
-                        <span>Можно добавлять в избранное</span>
-                    </div>
-                </div>
-                <section class="ordering-pay">
-                    <div class="ordering-pay__content">
-                        <h3>Способ оплаты</h3>
-                        <div class="payments-total_container">
-                            <div class="ordering-payments">
-                                <h4>Промокод</h4>
-                                <form class="promo-code_form" method="post">
-                                    <div class="input-err-text">
-                                        <div class="input_container">
-                                            <input type="text" class="form__input" placeholder=" " name="promoCode">
-                                            <label for="">Промокод</label>
-                                            <div class="input__err-img hidden">
-                                                <img src="assets/img/icons/warning--invalid-color.svg" alt="error_icon">
-                                            </div>
-                                        </div>
-                                        <p class="input__status-text"></p>
-                                    </div>
-                                    <button type="submit" class="activate-promo-code_btn">Активировать</button>
-                                </form>
-                                <!-- <div class="pay-methods">
-                                    <button class="pay-method active">
-                                        <img src="assets/img/payment_companies_logo/SBP_logo.svg" alt="">
-                                    </button>
-                                    <button class="pay-method">
-                                        <p>Банковской картой</p>
-                                        <div class="payment-logos_container">
-                                            <img src="assets/img/payment_companies_logo/MIR_logo.svg" alt="MIR_logo">
-                                            <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo--no-label">
-                                            <img src="assets/img/payment_companies_logo/Visa_2021_logo.svg" alt="Visa_2021_logo">
-                                        </div>
-                                    </button>
-                                </div> -->
-                                <div class="payment--current" id="bankCard">
-                                    <div class="payments_container">
-                                        <div class="payment">
-                                            <div class="logo-delete_container">
-                                                <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
-                                                <button>
-                                                    <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
-                                                </button>
-                                            </div>
-                                            <p class="card-num">1111 1111 1111 1111</p>
-                                            <p class="card-holder-name">Niyaz Syntaxframe</p>
-                                            <p class="card-exp-date">12/35</p>
-                                        </div>
-                                    </div>
-                                    <div class="add-payment">
-                                        <button class="add-payment__open-btn">
-                                            <div class="icon-headline">
-                                                <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
-                                                <span>Новая карта</span>
-                                            </div>
-                                            <img class="add-payment__btn-img" src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
-                                        </button>
-                                        <div class="add-payment__content">
-                                            <form method="post" class="add-payment__form">
-                                                <div class="input_container">
-                                                    <input type="text" class="form__input" placeholder=" ">
-                                                    <label for="">Номер карты</label>
-                                                </div>
-                                                <div class="input_container">
-                                                    <input type="text" class="form__input" placeholder=" ">
-                                                    <label for="">Имя держателя</label>
-                                                </div>
-                                                <div class="exp-date-card-code">
-                                                    <div class="input_container">
-                                                        <input type="text" class="form__input" placeholder=" ">
-                                                        <label for="">Срок действия</label>
-                                                    </div>
-                                                    <div class="input_container">
-                                                        <input type="text" class="form__input" placeholder=" ">
-                                                        <label for="">CVV/CVC</label>
-                                                    </div>
-                                                </div>
-                                                <div class="chechbox_container">
-                                                    <input type="checkbox" name="">
-                                                    <span>Сохранить после оплаты</span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="total">
-                                <p class="total-text">
-                                    Итого:<span class="total__price_container"></span>
-                                </p>
-                                <button class="pay-btn">
-                                    Оплатить
-                                </button>
-                                <p class="mini-text">Оплачивая услугу, Вы соглашаетесь с <span><a class="mini-text__link" href="">Политикой конфиденциальности</a></span>,<span><a class="mini-text__link" href="">Политикой обработки персональных данных</a></span> и с <span><a class="mini-text__link" href="">Политикой использования сервиса</a></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="benefits_item">
+                <img src="assets/img/icons/bar_chart_4_bars.svg" alt="chart_icon">
+                <span>Выгода в первый месяц использования</span>
             </div>
         </div>
     </div>
-</body>
-</html>
+</section>
+<section class="plans">
+    <div class="plans__content">
+        <h2 class="container">Тарифные планы</h2>
+        <div class="plans__viewpoint">
+            <div class="plans__container">
+                <div class="plan">
+                    <div class="plan__text">
+                        <h3>Базовый</h3>
+                        <p class="plan__description">
+                            Находите лучшие цены и экономьте на покупках.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">500</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="1">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+                <div class="plan recommend">
+                    <div class="plan-reccommend__header">
+                        <p>Рекомендуем</p>
+                    </div>
+                    <div class="plan__text">
+                        <h3>Базовый+</h3>
+                        <p class="plan__description">
+                            Находите лучшие цены и экономьте на покупках.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">650</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="2">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+                <div class="plan">
+                    <div class="plan__text">
+                        <h3>Бизнес</h3>
+                        <p class="plan__description">
+                            Для тех, кто хочет делать это профессионально.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">1000</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="3">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="plan__text">
+                        <h3>Базовый</h3>
+                        <p class="plan__description">
+                            Находите лучшие цены и экономьте на покупках.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">500</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="1">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper-slide recommend">
+                    <div class="plan-reccommend__header">
+                        <div class="plan-reccommend__header-bg"></div>
+                        Рекомендуем
+                    </div>
+                    <div class="plan__text">
+                        <h3>Базовый+</h3>
+                        <p class="plan__description">
+                            Находите лучшие цены и экономьте на покупках.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">650</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="2">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="plan__text">
+                        <h3>Бизнес</h3>
+                        <p class="plan__description">
+                            Для тех, кто хочет делать это профессионально.
+                        </p>
+                        <p class="plan__price">
+                            <span class="price-num">1000</span> ₽/мес.
+                        </p>
+                        <button id="subscribe-info" class="plan__btn btn-modal" data-plan-id="3">
+                            Оформить
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+        <!-- <div class="plans__slider-indicator">
+            <button class="slider-indicator"></button>
+            <button class="slider-indicator active"></button>
+            <button class="slider-indicator"></button>
+        </div> -->
+</section>
+<section class="faq">
+    <div class="faq__content container">
+        <h2>Вопрос-ответ</h2>
+        <div class="faq__item closed">
+            <div class="faq__question-btn">
+                <span class="faq__question">Почему сервис платный?</span>
+                <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
+            </div>
+            <div class="faq__answer">
+                <p>Вы платите нам за сервис, который заточен на Вашу выгоду при его использовании</p>
+            </div>
+        </div>
+        <div class="faq__item closed">
+            <div class="faq__question-btn">
+                <span class="faq__question">Для кого данный сервис?</span>
+                <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
+            </div>
+            <div class="faq__answer">
+                <p>Благодаря простоте сервиса, он подходит для всех - от простых пользователей - до предпринимателей</p>
+            </div>
+        </div>
+        <div class="faq__item closed">
+            <div class="faq__question-btn">
+                <span class="faq__question">В чём выгода использования?</span>
+                <img class="faq__icon" src="assets/img/icons/arrow_forward_ios.svg" alt="faq__btn">
+            </div>
+            <div class="faq__answer">
+                <p>В течении первого месяца использования пользователь окупает её и получает выгоду от использования.</p>
+                <p>Среднее время окупаемости - 2 недели*</p>
+                <p class="mini-text">*на основе данных опроса</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="subscribe-info-modal" class="interactives_modal hidden">
+    <div class="modal">
+        <div class="modal__header">
+            <h1>Оплата тарифа</h1>
+            <button class="close-modal">
+                <img src="assets/img/icons/close--white.svg" alt="close_icon">
+            </button>
+        </div>
+        <div class="modal__content">
+            <h2 class="subscribe__name">
+                Базовый+
+            </h2>
+            <p class="subscribe__desc">
+                Экономьте без ограничений.
+            </p>
+            <div class="subscribe__benefits">
+                <div class="benefit">
+                    <img src="assets/img/icons/all_inclusive--corporative-color.svg" alt="infinite_icon">
+                    <span>Безлимитные переходы</span>
+                </div>
+                <div class="benefit">
+                    <img src="assets/img/icons/heart_plus--corporative-color.svg" alt="heart-plus_icon">
+                    <span>Можно добавлять в избранное</span>
+                </div>
+            </div>
+            <section class="ordering-pay">
+                <div class="ordering-pay__content">
+                    <h3>Способ оплаты</h3>
+                    <div class="payments-total_container">
+                        <div class="ordering-payments">
+                            <h4>Промокод</h4>
+                            <form class="promo-code_form" method="post">
+                                <div class="input-err-text">
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" " name="promoCode">
+                                        <label for="">Промокод</label>
+                                        <div class="input__err-img hidden">
+                                            <img src="assets/img/icons/warning--invalid-color.svg" alt="error_icon">
+                                        </div>
+                                    </div>
+                                    <p class="input__status-text"></p>
+                                </div>
+                                <button type="submit" class="activate-promo-code_btn">Активировать</button>
+                            </form>
+                            <!-- <div class="pay-methods">
+                                <button class="pay-method active">
+                                    <img src="assets/img/payment_companies_logo/SBP_logo.svg" alt="">
+                                </button>
+                                <button class="pay-method">
+                                    <p>Банковской картой</p>
+                                    <div class="payment-logos_container">
+                                        <img src="assets/img/payment_companies_logo/MIR_logo.svg" alt="MIR_logo">
+                                        <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo--no-label">
+                                        <img src="assets/img/payment_companies_logo/Visa_2021_logo.svg" alt="Visa_2021_logo">
+                                    </div>
+                                </button>
+                            </div> -->
+                            <div class="payment--current" id="bankCard">
+                                <div class="payments_container">
+                                    <div class="payment">
+                                        <div class="logo-delete_container">
+                                            <img src="assets/img/payment_companies_logo/Mastercard_logo--no-label.svg" alt="Mastercard_logo">
+                                            <button>
+                                                <img src="assets/img/icons/delete--red.svg" alt="delete_icon">
+                                            </button>
+                                        </div>
+                                        <p class="card-num">1111 1111 1111 1111</p>
+                                        <p class="card-holder-name">Niyaz Syntaxframe</p>
+                                        <p class="card-exp-date">12/35</p>
+                                    </div>
+                                </div>
+                                <div class="add-payment">
+                                    <button class="add-payment__open-btn">
+                                        <div class="icon-headline">
+                                            <img src="assets/img/icons/add_card.svg" alt="add-card_icon">
+                                            <span>Новая карта</span>
+                                        </div>
+                                        <img class="add-payment__btn-img" src="assets/img/icons/arrow_forward_ios--white.svg" alt="arrow_icon">
+                                    </button>
+                                    <div class="add-payment__content">
+                                        <form method="post" class="add-payment__form">
+                                            <div class="input_container">
+                                                <input type="text" class="form__input" placeholder=" ">
+                                                <label for="">Номер карты</label>
+                                            </div>
+                                            <div class="input_container">
+                                                <input type="text" class="form__input" placeholder=" ">
+                                                <label for="">Имя держателя</label>
+                                            </div>
+                                            <div class="exp-date-card-code">
+                                                <div class="input_container">
+                                                    <input type="text" class="form__input" placeholder=" ">
+                                                    <label for="">Срок действия</label>
+                                                </div>
+                                                <div class="input_container">
+                                                    <input type="text" class="form__input" placeholder=" ">
+                                                    <label for="">CVV/CVC</label>
+                                                </div>
+                                            </div>
+                                            <div class="chechbox_container">
+                                                <input type="checkbox" name="">
+                                                <span>Сохранить после оплаты</span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <p class="total-text">
+                                Итого:<span class="total__price_container"></span>
+                            </p>
+                            <button class="pay-btn">
+                                Оплатить
+                            </button>
+                            <p class="mini-text">Оплачивая услугу, Вы соглашаетесь с <span><a class="mini-text__link" href="">Политикой конфиденциальности</a></span>,<span><a class="mini-text__link" href="">Политикой обработки персональных данных</a></span> и с <span><a class="mini-text__link" href="">Политикой использования сервиса</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

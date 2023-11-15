@@ -7,6 +7,6 @@ router.get('^/$|/index(.html)?', (req, res) => {
     productsController.getProducts('кроссовки')
 });
 
-router.route('/?s')
+router.route('/')
 
 module.exports = router;
