@@ -1,5 +1,5 @@
-const searchForm = document.querySelector('.search-product')
+// const searchForm = document.querySelector('.search-product')
 
-searchForm.onsubmit = (e) => {
-    e.preventDefault()
-}
+// searchForm.onsubmit = (e) => {
+//     e.preventDefault()
+// }
