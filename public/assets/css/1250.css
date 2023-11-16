@@ -702,6 +702,10 @@ button.upload-more p {
 .results_container {
     margin-top: 35px;
 }
+.result {
+    width: 100%;
+
+}
 .result + .result {
     margin-top: 12px;
 }
@@ -715,7 +719,7 @@ button.upload-more p {
     position: relative;
     padding: 16px;
     border-radius: 20px;
-    width: fit-content;
+    width: 100%;
 }
 .result__label {
     display: flex;
@@ -740,7 +744,7 @@ button.upload-more p {
     font-weight: 500;
 }
 .result__container {
-    width: 850px;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 5px;

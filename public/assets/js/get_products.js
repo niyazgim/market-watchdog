@@ -9,11 +9,17 @@ async function getResults() {
     })
     .then(res => res.json())
     .then(data => {
-        async function renderProducts() {
+        // async function renderProducts() {
 
-        }
+        // }
         console.log(data)
-        data.forEach(e => {
+        let dataSortedByPrice = data.sort((a,b) => a.price - b.price);
+        console.log(dataSortedByPrice)
+        // if there are no raiting, just skip it
+        let mostRelavatedReviews =  data.sort((a,b) => a.rateRelevance - b.rateRelevance)
+        mostRelavatedReviews = mostRelavatedReviews[mostRelavatedReviews.length - 1]
+        console.log(mostRelavatedReviews)
+        dataSortedByPrice.forEach(e => {
             resultsContainer.innerHTML += `
             <div class="result recommend">
                 <div class="result__label">
@@ -42,7 +48,7 @@ async function getResults() {
                             <p class="result__raiting-relevance">${e.rateRelevance}</p>
                         </div>
                     </div>
-                    <a href="${e.link}" class="marketplace_btn">
+                    <a href="${e.link}" target="_blank" class="marketplace_btn">
                         <p>WB</p>
                         <img src="assets/img/icons/east.svg" alt="btn_arrow">
                     </a>
@@ -64,7 +70,7 @@ async function getResults() {
                         <button class="result__fav_btn">
                             <img src="assets/img/icons/favorite.svg" alt="favorite">
                         </button>
-                        <a href="${e.link}" class="marketplace_btn">
+                        <a href="${e.link}" target="_blank"  class="marketplace_btn">
                             <p>WB</p>
                             <img src="assets/img/icons/east.svg" alt="btn_arrow">
                         </a>

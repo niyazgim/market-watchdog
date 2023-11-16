@@ -2,7 +2,8 @@
 const mainModule = require('../models/mainModel')
 
 const getProducts = async (req,res) => {
-    return await mainModule.getProductsList(req)
+    let products = await mainModule.getProductsList(req)
+    return products
 }
 
 module.exports = {

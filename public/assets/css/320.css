@@ -855,7 +855,7 @@ button.upload-more img {
     position: relative;
     padding: 16px;
     border-radius: 20px;
-    width: fit-content;
+    width: 100%;
 }
 .result__label {
     display: flex;
@@ -924,7 +924,7 @@ button.upload-more img {
     gap: 3px;
 }
 .result__raiting-info p {
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 400;
 }
 .result__raiting-info img {
@@ -940,6 +940,8 @@ button.upload-more img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: fit-content;
+    padding: 3px;
     padding-inline: 6px;
 }
 .product-name-text {
