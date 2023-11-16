@@ -2,8 +2,7 @@
 const mainModule = require('../models/mainModel')
 
 const getProducts = async (req,res) => {
-    res = await mainModule.getProductsList(req)
-    
+    return await mainModule.getProductsList(req)
 }
 
 module.exports = {

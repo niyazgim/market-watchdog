@@ -30,6 +30,7 @@ include('assets/js/swiper-slider.js')
 include('assets/js/faq.js')
 include('assets/js/admin-page__interactives.js')
 include('assets/js/search_product.js')
+include('assets/js/get_products.js')
 
 // switch(getLastElementFromUrl(window.location.href)) {
 //     case('index.html' || ''):

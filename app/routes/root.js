@@ -4,11 +4,15 @@ const productsController = require('../controllers/mainController')
 
 router.get('^/$|/index(.html)?', (req, res) => {
     res.render("index")
-    // get querry process
-    if(req.query.s) {
-        productsController.getProducts(req.query.s)
-    }
+    let search = req.query.s
+    router.get('/getProducts', async (req,res) => {
+        if(search) {
+            let products = await productsController.getProducts(search)
+            res.send(products)
+        }
+    })
 });
+
 
 // use there an post querry for get an search form querry
 
