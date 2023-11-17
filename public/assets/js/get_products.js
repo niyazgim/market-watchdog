@@ -10,11 +10,19 @@ async function getResults() {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        // it just don't sort lol
-        let dataSortedByPrice = data.sort((a,b) => a.price - b.price);
+        // it works only that way i think
+        let dataSortedByPrice = data.sort(function(a, b) {
+            var keyA = new Date(a.price),
+            keyB = new Date(b.price);
+            if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+            return 0;
+        });
         console.log(dataSortedByPrice)
         // if there are no raiting, just skip it
-        let mostRelavatedReviews = data.sort((a,b) => a.rateRelevance - b.rateRelevance)
+        let mostRelavatedReviews = data
+            .filter(obj => typeof obj.value !== 'undefined')
+            .sort((a,b) => a.rateRelevance - b.rateRelevance);
         mostRelavatedReviews = mostRelavatedReviews[0]
         console.log(mostRelavatedReviews)
         // resultsContainer.innerHTML += `
