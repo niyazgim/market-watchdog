@@ -29,7 +29,6 @@ const getProductsList = async (req,res) => {
             });
         });
     };
-    
     await scrollToEnd();
     const products = await page.$$eval('.product-card-list article.product-card', (elements) => {
         return elements.map((element) => {
@@ -38,10 +37,18 @@ const getProductsList = async (req,res) => {
             const name = element.querySelector('h2.product-card__brand-wrap').textContent.trim()
             const price = parseFloat(element.querySelector('.price__lower-price').textContent.replace(/[^\d.]/g, ''))
             const priceOld = parseFloat(element.querySelector('.price__wrap > del').textContent.replace(/[^\d.]/g, ''))
-            const raiting = parseFloat(element.querySelector('.address-rate-mini').textContent.replace(/[^\d.]/g, ''))
-            const reviewsCount = parseFloat(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))
-            const rateRelevance = parseFloat((parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) / parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, '')))).toFixed(5)
-            return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance }
+            let raiting = parseFloat(element.querySelector('.address-rate-mini').textContent.replace(/[^\d.]/g, ''))
+            if(raiting) {
+                const reviewsCount = parseFloat(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))
+                const rateRelevance = parseFloat((parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) / parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, '')))).toFixed(5)
+                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance }
+            }
+            else {
+                raiting = 0
+                const reviewsCount = 0
+                const rateRelevance = 0
+                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance }
+            }
         })
     })
 

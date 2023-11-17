@@ -14,9 +14,11 @@ app.use(express.static(staticPath))
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', 'hbs');
 
+
 // Set the views directory
 app.set('views', path.join(__dirname, 'app/views'));
 hbs.registerPartials(__dirname + '/app/views/partials');
+
 
 app.use('/', require('./app/routes/root'));
 

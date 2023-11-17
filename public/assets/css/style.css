@@ -20,6 +20,9 @@
     --text-color--invalid:#E82222;
     --text-color--link:#216FE5;
     --button-color--hover:#F5F5F5;
+
+	--w: #2d2d2d;
+	--s: 2s;
 }
 *,*::before,*::after {
     margin: 0;
@@ -28,4 +31,5 @@
     text-decoration: none;
     color: var(--text-color--1);
     font-family: 'Inter', sans-serif;
+    transform-style: preserve-3d;
 }
