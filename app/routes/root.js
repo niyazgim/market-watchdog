@@ -6,10 +6,6 @@ router.get('^/$|/index(.html)?', (req, res) => {
     // res.render("index--registered")
     // let search = req.query.s
     res.render("index--not-registered")
-    
-    router.get('/userReg', async (req,res) => {
-
-    })
     // router.get('/getProducts', async (req,res) => {
     //     if(search) {
     //         let products = await productsController.getProducts(search)

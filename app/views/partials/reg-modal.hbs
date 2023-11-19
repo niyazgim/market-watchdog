@@ -7,17 +7,17 @@
             </button>
         </div>
         <div class="modal__content">
-            <form method="post">
+            <form method="post" id="regForm">
                 <div class="input_container">
-                    <input type="text" class="form__input" placeholder=" ">
+                    <input type="text" class="form__input" placeholder=" " name="email">
                     <label for="">E-mail</label>
                 </div>
                 <div class="input_container">
-                    <input type="password" class="form__input" placeholder=" ">
+                    <input type="password" class="form__input" placeholder=" " name="pass_1">
                     <label for="">Пароль</label>
                 </div>
                 <div class="input_container">
-                    <input type="password" class="form__input" placeholder=" ">
+                    <input type="password" class="form__input" placeholder=" " name="pass_2">
                     <label for="">Повторите пароль</label>
                 </div>
                 <input type="submit" value="Войти">
@@ -27,3 +27,4 @@
         </div>
     </div>
 </dialog>
+<script src="assets/js/reg.js"></script>

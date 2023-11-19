@@ -2,32 +2,14 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const hbs  = require('hbs');
 const path = require('path'); 
-const mysql2 = require('mysql2');
-
-const connection = mysql2.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'market_watchdog',
-    password: ''
-})
-
-connection.connect((err) => {
-    if(err) {
-        return console.error("Error: " + err.message);
-    } else {
-        console.log("MySQL DB connected");
-    }
-})
-// connection.end(function(err) {
-//     if (err) {
-//         return console.log("Error: " + err.message);
-//     }
-//     console.log("Connection closed");
-// });
+const userController = require('./app/controllers/userController')
+const connect = require('./app/dataBase/db')
+const port = process.env.PORT || 8080;
 
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 const staticPath = path.join(__dirname, "/public")
 app.use(express.static(staticPath))
@@ -44,6 +26,10 @@ hbs.registerPartials(__dirname + '/app/views/partials');
 
 app.use('/', require('./app/routes/root'));
 
+app.post('/regUser', async (req,res) => {
+    res.send(userController.regUser(req))
+})
+
 app.all('*', (req, res) => {
     res.status(404);
     // if (req.accepts('html')) {
@@ -55,7 +41,7 @@ app.all('*', (req, res) => {
     // }
 });
 
-app.listen(3000);
+app.listen(port);
 
 // install playwright chromium
 // https://github.com/microsoft/playwright/issues/4033

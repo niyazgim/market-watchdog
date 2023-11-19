@@ -4,6 +4,7 @@ if(document.querySelector('.swiper')) {
         loop: false,
         initialSlide: 1,
         slidesPerView: 1.25,
+        spaceBetween: 10,
         centeredSlides: true,
         pagination: {
             el: '.swiper-pagination',

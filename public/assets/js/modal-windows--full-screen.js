@@ -7,7 +7,10 @@ modalWindowsBtns.forEach((e) => {
         document.body.style.overflow = 'hidden';
         e.modalWindow.querySelector('.close-modal').onclick = () => {
             e.modalWindow.close()
-            document.body.style.overflow = '';
+            const burgerMenuLayout = document.querySelector('.burger-menu')
+            if(burgerMenuLayout && !burgerMenuLayout.classList.contains('opened')) {
+                document.body.style.overflow = '';
+            }
         }
         if(e.modalWindow.id === 'subscribe-info-modal') {
             const planInfo = plansContent[e.dataset.planId]

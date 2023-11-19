@@ -10,7 +10,7 @@ async function getResults() {
         },
     })
     if (!res.ok) {
-        console.log("Error trying to load the list of users: ");
+        console.log("Error on trying get products list");
         throw res;
     }
     if (res.status === 204) {
