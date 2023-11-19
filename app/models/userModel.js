@@ -1,24 +1,30 @@
 const connect = require('../dataBase/db')
-const { check, validationResult } = require("express-validator");
+const { check } = require("express-validator");
 
 const regValidator = [
-    check(user.email)
+    check('email')
         .notEmpty()
         .withMessage('Введите email')
         .isLength({min: 3})
         .withMessage('Минимальная длинна - 3 символа')
         .isEmail()
-        .withMessage('Некорректный email'),
-    check(user.pass_1)
+        .withMessage('Некорректный email')
+        .custom(async(email) => {
+            constRegUser = await connect.execute("SELECT `email` FROM `user` WHERE email = ?",[email])
+            if (constRegUser) {
+                throw new Error('Такой email уже есть')
+            }
+        }),
+    check('pass_1')
         .notEmpty()
         .withMessage('Введите пароль')
         .isLength({min: 10})
         .withMessage('Минимальная длинна - 10 символов'),
-    check(user.pass_2)
+    check('pass_2')
         .notEmpty()
         .withMessage('Введите пароль повторно')
         .isLength({min: 10})
-        .withMessage('Минимальная длинна - 10 символов'),
+        .withMessage('Минимальная длинна - 10 символов')
 ]
 
 const regUser = async (req, res) => {

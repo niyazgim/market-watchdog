@@ -3,6 +3,8 @@ const exphbs  = require('express-handlebars');
 const hbs  = require('hbs');
 const path = require('path'); 
 const userController = require('./app/controllers/userController')
+const { regValidator } = require('./app/models/userModel')
+const { validationResult, check } = require('express-validator')
 const connect = require('./app/dataBase/db')
 const port = process.env.PORT || 8080;
 
@@ -26,7 +28,16 @@ hbs.registerPartials(__dirname + '/app/views/partials');
 
 app.use('/', require('./app/routes/root'));
 
-app.post('/regUser', async (req,res) => {
+app.post('/regUser', [
+    regValidator,
+    // check(req.body.pass_2)
+    //     .equals(req.body.pass_1)
+    //     .withMessage('пароли не совпадают'),
+], async (req,res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
     res.send(userController.regUser(req))
 })
 
