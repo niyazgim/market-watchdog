@@ -1,22 +1,22 @@
 const faqBtns = document.querySelectorAll('.faq__item')
 
 faqBtns.forEach((e)=>{
-    let faqStartHeight = e.offsetHeight + Number((getStyles(e).borderTopWidth).slice(0,-2))
+    let faqStartHeight = e.offsetHeight + Number((getComputedStyle(e).borderTopWidth).slice(0,-2))
     window.addEventListener('resize',function(){
-        faqStartHeight =  Number((getStyles(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getStyles(e).borderTopWidth).slice(0,-2)) + Number((getStyles(e).paddingBottom).slice(0,-2))
+        faqStartHeight =  Number((getComputedStyle(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getComputedStyle(e).borderTopWidth).slice(0,-2)) + Number((getComputedStyle(e).paddingBottom).slice(0,-2))
         if(e.classList.contains('closed')) {
             e.style.height = faqStartHeight + 'px'
         }
         else {
             
-            e.style.height = faqStartHeight + + Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getStyles(e.querySelector('.faq__answer')).marginTop).slice(0,-2)) + 'px'
+            e.style.height = faqStartHeight + + Number((getComputedStyle(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getComputedStyle(e.querySelector('.faq__answer')).marginTop).slice(0,-2)) + 'px'
         }
     });
     
     e.onclick = () => {
-        const faqOpenedHeight = faqStartHeight + Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getStyles(e.querySelector('.faq__answer')).marginTop).slice(0,-2))
-        const topPos = Number((getStyles(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getStyles(e).paddingTop).slice(0,-2))
-        const topPosStart = Number((getStyles(e.querySelector('.faq__answer')).height).slice(0,-2))
+        const faqOpenedHeight = faqStartHeight + Number((getComputedStyle(e.querySelector('.faq__answer')).height).slice(0,-2)) + Number((getComputedStyle(e.querySelector('.faq__answer')).marginTop).slice(0,-2))
+        const topPos = Number((getComputedStyle(e.querySelector('.faq__question-btn')).height).slice(0,-2)) + Number((getComputedStyle(e).paddingTop).slice(0,-2))
+        const topPosStart = Number((getComputedStyle(e.querySelector('.faq__answer')).height).slice(0,-2))
         if(e.classList.contains('closed')) {
             e.querySelector('.faq__icon').animate([
                 {transform: 'rotate(0deg)'},

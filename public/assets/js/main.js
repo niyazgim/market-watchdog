@@ -26,10 +26,8 @@ include('assets/js/modal-windows--full-screen.js')
 include('assets/js/payments-interactives.js')
 include('assets/js/promo-code-enter.js')
 
-include('assets/js/swiper-slider.js')
 include('assets/js/faq.js')
 include('assets/js/admin-page__interactives.js')
-include('assets/js/get_products.js')
 include('assets/js/preloader.js')
 
 // switch(getLastElementFromUrl(window.location.href)) {

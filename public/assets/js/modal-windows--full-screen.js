@@ -2,10 +2,13 @@ const modalWindowsBtns = document.querySelectorAll('.btn-modal')
 
 modalWindowsBtns.forEach((e) => {
     e.modalWindow = document.querySelector(`#${e.id}-modal`)
-    e.onclick = () => {
-        document.body.style.overflow = "hidden"
-        document.body.style.paddingRight = getScrollbarWidth() + 'px'
-        e.modalWindow.classList.toggle('hidden')
+    e.onclick = (event) => {
+        e.modalWindow.showModal()
+        document.body.style.overflow = 'hidden';
+        e.modalWindow.querySelector('.close-modal').onclick = () => {
+            e.modalWindow.close()
+            document.body.style.overflow = '';
+        }
         if(e.modalWindow.id === 'subscribe-info-modal') {
             const planInfo = plansContent[e.dataset.planId]
 
@@ -37,10 +40,16 @@ modalWindowsBtns.forEach((e) => {
             //e.modalWindow.querySelector('.total-text').textContent = `Итого ${planInfo['price']}`
 
         }
-        e.modalWindow.querySelector('.close-modal').onclick = () => {
-            e.modalWindow.classList.toggle('hidden')
-            document.body.style.overflow = ""
-            document.body.style.paddingRight = 0
-        }
+        // e.modalWindow.querySelector('.close-modal').onclick = () => {
+        //     closeModal(e.modalWindow);
+        // }
+        // e.modalWindow.addEventListener('click', function () {
+        //     closeModal(e.modalWindow);
+        // });
+        // for (var i = 0; i <  e.modalWindow.childNodes.length; i++) {
+        //     e.modalWindow.childNodes[i].addEventListener('click', function (event) {
+        //         event.stopPropagation();
+        //     });
+        // }
     }
 })

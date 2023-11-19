@@ -11,24 +11,24 @@ const getProductsList = async (req,res) => {
     await page.waitForSelector('.product-card-list')
 
     // if there is no raiting need to set null and dont sort it
-    // const scrollToEnd = async () => {
-    //     await page.evaluate(async () => {
-    //         await new Promise((resolve, reject) => {
-    //             let totalHeight = 0;
-    //             let distance = 100;
-    //             const timer = setInterval(() => {
-    //                 const scrollHeight = document.body.scrollHeight;
-    //                 window.scrollBy(0, distance);
-    //                 totalHeight += distance;
-    //                 if (totalHeight >= scrollHeight) {
-    //                     clearInterval(timer);
-    //                     resolve();
-    //                 }
-    //             }, 100); // Adjust the scrolling speed if necessary
-    //         });
-    //     });
-    // };
-    // await scrollToEnd();
+    const scrollToEnd = async () => {
+        await page.evaluate(async () => {
+            await new Promise((resolve, reject) => {
+                let totalHeight = 0;
+                let distance = 100;
+                const timer = setInterval(() => {
+                    const scrollHeight = document.body.scrollHeight;
+                    window.scrollBy(0, distance);
+                    totalHeight += distance;
+                    if (totalHeight >= scrollHeight) {
+                        clearInterval(timer);
+                        resolve();
+                    }
+                }, 100); // Adjust the scrolling speed if necessary
+            });
+        });
+    };
+    await scrollToEnd();
     const products = await page.$$eval('.product-card-list article.product-card', (elements) => {
         return elements.map((element) => {
             const pid = element.dataset.nmId
