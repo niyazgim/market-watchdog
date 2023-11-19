@@ -9,10 +9,17 @@ const regValidator = [
         .withMessage('Минимальная длинна - 3 символа')
         .isEmail()
         .withMessage('Некорректный email')
-        .custom(async(email) => {
-            constRegUser = await connect.execute("SELECT `email` FROM `user` WHERE email = ?",[email])
-            if (constRegUser) {
-                throw new Error('Такой email уже есть')
+        .custom(async (email) => {
+            try {
+                connect.query("SELECT `email` FROM `user` WHERE email = ?",[email])
+                    .then(result => {
+                        console.log(result)
+                        if (result) {
+                            return Promise.reject('Такой email уже существует')
+                        }
+                    })
+            } catch (e) {
+                console.log(e);
             }
         }),
     check('pass_1')
