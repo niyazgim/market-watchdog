@@ -10,26 +10,25 @@ const getProductsList = async (req,res) => {
 
     await page.waitForSelector('.product-card-list')
 
-    let previousHeight
     // if there is no raiting need to set null and dont sort it
-    const scrollToEnd = async () => {
-        await page.evaluate(async () => {
-            await new Promise((resolve, reject) => {
-                let totalHeight = 0;
-                let distance = 100;
-                const timer = setInterval(() => {
-                    const scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
-                    if (totalHeight >= scrollHeight) {
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 100); // Adjust the scrolling speed if necessary
-            });
-        });
-    };
-    await scrollToEnd();
+    // const scrollToEnd = async () => {
+    //     await page.evaluate(async () => {
+    //         await new Promise((resolve, reject) => {
+    //             let totalHeight = 0;
+    //             let distance = 100;
+    //             const timer = setInterval(() => {
+    //                 const scrollHeight = document.body.scrollHeight;
+    //                 window.scrollBy(0, distance);
+    //                 totalHeight += distance;
+    //                 if (totalHeight >= scrollHeight) {
+    //                     clearInterval(timer);
+    //                     resolve();
+    //                 }
+    //             }, 100); // Adjust the scrolling speed if necessary
+    //         });
+    //     });
+    // };
+    // await scrollToEnd();
     const products = await page.$$eval('.product-card-list article.product-card', (elements) => {
         return elements.map((element) => {
             const pid = element.dataset.nmId
@@ -41,13 +40,15 @@ const getProductsList = async (req,res) => {
             if(raiting) {
                 const reviewsCount = parseFloat(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))
                 const rateRelevance = parseFloat((parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) / parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, '')))).toFixed(5)
-                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance }
+                const degreeOfProfitability = parseFloat(rateRelevance / price)
+                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance, degreeOfProfitability }
             }
             else {
                 raiting = 0
                 const reviewsCount = 0
                 const rateRelevance = 0
-                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance }
+                const degreeOfProfitability = 0
+                return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance, degreeOfProfitability }
             }
         })
     })
