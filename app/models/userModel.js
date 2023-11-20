@@ -2,7 +2,7 @@ const connect = require('../dataBase/db')
 const { check } = require("express-validator");
 const bcrypt = require("bcrypt")
 
-
+// add trim and escape mb
 const regValidator = [
     check('email')
         .notEmpty()
@@ -39,10 +39,44 @@ const regValidator = [
         })
 ]
 
+// const logValidator = [
+//     check('email')
+//         .trim()
+//         .escape()
+//         .notEmpty()
+//         .withMessage('Введите email')
+//         .isLength({min: 3})
+//         .withMessage('Минимальная длинна - 3 символа')
+//         .isEmail()
+//         .withMessage('Некорректный email'),
+//     check('email')
+//         .custom(async (email) => {
+//             const existingUser = 
+//                 await connect.query("SELECT `email` FROM `user` WHERE email = ?",[email])
+            
+//             if (existingUser[0].length === 0) {
+//                 throw new Error('Пользователя с такой почтой не существует');
+//             }
+//         }),
+//     check('pass_1')
+//         .notEmpty()
+//         .withMessage('Введите пароль'),
+//     check('pass_1')
+//         .custom(async (email, pass_1) => {
+//             const checkPass = 
+//                 await connect.query("SELECT `password` FROM `user` WHERE email = ?",[email])
+//             bcrypt.compare(checkPass, hash)
+//             .then(res => {
+//                 console.log(res)
+//             })
+//             .catch(err => console.error(err.message))        
+//         }),
+//     ]
+
 const regUser = function(req, res) { 
     bcrypt.hash(req.body.pass_1, 10)
         .then(hash => {
-            connect.execute("INSERT INTO `user`(`email`, `pass`, `role_id`) VALUES (?,?,2)",[req.body.email, hash])
+            connect.execute("INSERT INTO `user`(`email`, `password`, `role_id`) VALUES (?,?,2)",[req.body.email, hash])
                 .then(result =>{
                     console.log(result[0]);
                     return JSON.stringify(result)
@@ -58,16 +92,7 @@ const regUser = function(req, res) {
     .catch(err => console.error(err.message))
 }
 
-const comparePassword = function (hash) {
-    bcrypt.compare(password, hash)
-    .then(res => {
-        console.log(res)
-    })
-    .catch(err => console.error(err.message))        
-}
-
 module.exports = {
     regValidator,
-    comparePassword,
     regUser,
 }
