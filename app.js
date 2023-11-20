@@ -10,11 +10,23 @@ const port = process.env.PORT || 8080;
 
 const app = express();
 
+function errorHandler(error, req, res, next) {
+    res.status(error.status || 500);
+    res.send({
+        error: {
+            message: error.message,
+        },
+    });
+}
+
+app.use(errorHandler);
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const staticPath = path.join(__dirname, "/public")
 app.use(express.static(staticPath))
+
 
 // Set 'hbs' as the default view engine
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
