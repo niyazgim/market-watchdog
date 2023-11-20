@@ -43,6 +43,14 @@ hbs.registerPartials(__dirname + '/app/views/partials');
 
 app.use('/', require('./app/routes/root'));
 
+// app.use(function (req, res, next) {
+//     res.locals.session = req.session;
+//     if(res.locals.session) {
+//         res.locals.isLogged = true;
+//     }
+//     next();
+// });
+
 app.post('/regUser', [
     regValidator,
 ], async (req,res) => {
@@ -54,20 +62,34 @@ app.post('/regUser', [
     res.redirect('/');
 })
 
-passport.serializeUser((user, done) => {
-    done(null,user._id)
-})
+// passport.serializeUser((user, done) => {
+//     done(null, user._id);
+// });
 
-passport.deserializeUser( async (id, done) => {
-    try {
-        const result = await connect.query('SELECT * FROM user WHERE _id = ?',[id])
-        if(result[0][0]) {
-            done(null, result[0][0])
-        } 
-    } catch (err) {
-        done(err,null);
+// passport.deserializeUser((id, done) => {
+//     connect.query('SELECT * FROM user WHERE _id = ?', [id], (error, results) => {
+//         if (error) {
+//             return done(error);
+//         }
+//         const user = results[0];
+//         done(null, user);
+//     });
+// });
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+
+function mustAuthenticated(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.status(HTTPStatus.UNAUTHORIZED).send({});
     }
-})
+    next();
+}
 
 // passport.use(new LocalStrategy (
 //     async (email,pass_1,done) => {
@@ -107,11 +129,11 @@ passport.use(new LocalStrategy (
         try {
             const loggedUser = await connect.query('SELECT * FROM user WHERE email = ?', [email]);
             if(loggedUser[0].length === 0) { // Check if user doesn't exist
-                return done(null, false); // Use return and 'false' instead of 'done(null, false)'
+                return done(null, false, { message: 'Пользователя с такой почтой не существует' }); // Use return and 'false' instead of 'done(null, false)'
             } else {
                 const matched = await bcrypt.compare(password, loggedUser[0][0].password); // Compare password hashes
                 if(!matched) {
-                    return done(null, false);
+                    return done(null, false, { message: 'Неправильный пароль' });
                 } else {
                     return done(null, loggedUser[0][0]); // Pass the user to 'done' for successful authentication
                 }
@@ -122,13 +144,22 @@ passport.use(new LocalStrategy (
     }
 ));
 
-app.post('/logUser', 
-    passport.authenticate('local'), // Specify a failure redirect URL
-    (req,res) => {
-        res.status(200).send('Successfully logged in'); // Handle the response based on the authentication result
-    }
-);
+app.post('/logUser', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    //passport.js has a logIn user method
+    req.logIn(user, function(err) {
+        if (err) { return next(err); }
 
+        return res.redirect('/');
+    });
+    })(req, res, next);
+});
+
+app.post('/logout', mustAuthenticated, (req, res) => {
+    req.logOut();
+    res.send({});
+});
 
 app.all('*', (req, res) => {
     res.status(404);

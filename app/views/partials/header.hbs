@@ -5,13 +5,20 @@
         </a>
         <nav class="header__nav">
             <div class="header__menu">
-                <a href="">Тарифы</a>
-                <a href="">Почему мы?</a>
-                <a href="">Вопрос-ответ</a>
+                <a href="/#plans">Тарифы</a>
+                <a href="/">Почему мы?</a>
+                <a href="/#faq">Вопрос-ответ</a>
             </div>
             <div class="header__user-btns">
-                <button id="sign-in" class="btn-modal">Войти</a>
-                <button id="sign-up" class="btn-modal">Регистрация</a>
+                {{#if isLogged}}
+                    <a href="/profile" class="btn">Профиль</a>
+                    <a href="/logout" class="btn">Выйти</a>
+                    <a href="/admin" class="btn">Админ-панель</a>
+                {{/if}}
+                {{#unless isLogged}}
+                    <button id="sign-in" class="btn-modal">Войти</a>
+                    <button id="sign-up" class="btn-modal">Регистрация</a>
+                {{/unless}}
             </div>
         </nav>
         <button class="burger-menu__btn">

@@ -5,7 +5,10 @@ const productsController = require('../controllers/mainController')
 router.get('^/$|/index(.html)?', (req, res) => {
     // res.render("index--registered")
     // let search = req.query.s
-    res.render("index--not-registered")
+    console.log(req.isAuthenticated())
+    res.render("index--not-registered", {
+        
+    })
     // router.get('/getProducts', async (req,res) => {
     //     if(search) {
     //         let products = await productsController.getProducts(search)
