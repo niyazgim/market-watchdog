@@ -3,23 +3,23 @@ const exphbs  = require('express-handlebars');
 const hbs  = require('hbs');
 const path = require('path'); 
 const userController = require('./app/controllers/userController')
-const { regValidator } = require('./app/models/userModel')
-const { validationResult, check } = require('express-validator')
+const { regValidator, verifyPasswordsMatch } = require('./app/models/userModel')
+const { validationResult } = require('express-validator')
 const connect = require('./app/dataBase/db')
 const port = process.env.PORT || 8080;
 
 const app = express();
 
-function errorHandler(error, req, res, next) {
-    res.status(error.status || 500);
-    res.send({
-        error: {
-            message: error.message,
-        },
-    });
-}
+// function errorHandler(error, req, res, next) {
+//     res.status(error.status || 500);
+//     res.send({
+//         error: {
+//             message: error.message,
+//         },
+//     });
+// }
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -42,15 +42,13 @@ app.use('/', require('./app/routes/root'));
 
 app.post('/regUser', [
     regValidator,
-    // check(req.body.pass_2)
-    //     .equals(req.body.pass_1)
-    //     .withMessage('пароли не совпадают'),
 ], async (req,res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })
     }
-    res.send(userController.regUser(req))
+    userController.regUser(req)
+    res.redirect('/');
 })
 
 app.all('*', (req, res) => {
