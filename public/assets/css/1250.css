@@ -230,9 +230,6 @@ header nav {
     align-items: center;
     gap: 15px;
 }
-.header__nav {
-
-}
 .header__user-btns {
     display: flex;
     align-items: center;
