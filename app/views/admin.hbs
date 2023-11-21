@@ -14,14 +14,14 @@
             {{#each users}}
                 <div class="user" data-uid="{{this._id}}">
                     <div class="user__modal hidden">
-                        <div class="user__modal-item block-user">
+                        <button class="user__modal-item block-user">
                             <img src="/assets/img/icons/block.svg" alt="block_icon">
                             <span>Заблокировать пользователя</span>
-                        </div>
-                        <div class="user__modal-item delete-user">
+                        </button>
+                        <button class="user__modal-item delete-user">
                             <img src="/assets/img/icons/delete--red.svg" alt="delete-user_icon">
                             <span>Удалить пользователя</span>
-                        </div>
+                        </button>
                     </div>
                     <div class="user__email-interactives">
                         <button class="user__interactives_btn">
@@ -29,7 +29,7 @@
                         </button>
                         <div class="user__email">
                             <img src="/assets/img/icons/person.svg" alt="user_icon">
-                            <span>{{this.mail}}</span>
+                            <span>{{this.email}}</span>
                         </div>
                     </div>
                     <div class="user__subscribe">
@@ -41,3 +41,6 @@
         </div>
     </div>
 </section>
+
+<script src="/assets/js/delete.js"></script>
+<script src="/assets/js/blockUser.js"></script>

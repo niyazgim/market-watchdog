@@ -2,11 +2,6 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const hbs  = require('hbs');
 const path = require('path'); 
-const userController = require('./app/controllers/userController')
-const { regValidator } = require('./app/models/userModel')
-const { validationResult } = require('express-validator')
-const connect = require('./app/dataBase/db')
-const bcrypt = require("bcrypt")
 const session = require('express-session');
 const port = process.env.PORT || 8080;
 
@@ -30,59 +25,24 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'app/views'));
 hbs.registerPartials(__dirname + '/app/views/partials');
 
+Handlebars.registerHelper( "when",function(operand_1, operator, operand_2, options) {
+    var operators = {
+    'eq': function(l,r) { return l == r; },
+    'noteq': function(l,r) { return l != r; },
+    'gt': function(l,r) { return Number(l) > Number(r); },
+    'or': function(l,r) { return l || r; },
+    'and': function(l,r) { return l && r; },
+    '%': function(l,r) { return (l % r) === 0; }
+    }
+    , result = operators[operator](operand_1,operand_2);
+
+    if (result) return options.fn(this);
+    else  return options.inverse(this);
+});
+
 
 app.use('/', require('./app/routes/root'));
 app.use('/admin', require('./app/routes/api/adminRouter'));
-
-app.post('/regUser', [
-    regValidator,
-], async (req,res) => {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() })
-    }
-    userController.regUser(req)
-    res.redirect('/');
-})
-
-app.post('/logUser', async (req, res) => {
-    const { email, pass_1 } = req.body;
-    const user = await connect.query("SELECT * FROM user WHERE email = ?",[email]);
-    let isMatch
-    if(user[0][0]) {
-        isMatch = await bcrypt.compare(pass_1, user[0][0].password)
-    } else {
-        isMatch = false
-    }
-    let errors = []
-    if (!user[0][0]) {
-        errors.push({ 'msg' : 'Email неверный', 'path' : 'email' })
-    }
-    if(!isMatch) {
-        errors.push({ 'msg' : 'Пароль неверный' , 'path' : 'pass_1' })
-    }
-    console.log(errors)
-    if(errors.length != []) {
-        return res.status(400).json(errors)
-    }
-    else {
-        req.session.userId = user[0][0]._id; // Set the user's ID in the session
-        res.redirect('/');
-    }
-});
-
-app.get('/logout', (req, res) => {
-    req.session.destroy(err => {
-    if (err) {
-        console.error(err);
-    }
-    res.redirect('/');
-    });
-});
-
-
-
-
 
 
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productsController = require('../../controllers/userController')
+const userController = require('../../controllers/userController')
 const connect = require('../../dataBase/db')
 
 async function isAuthenticated(req, res, next) {
@@ -13,11 +13,10 @@ async function isAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-router.get('/admin', async (req, res) => {
-    console.log(req.session)
-    console.log(req.session.userId)
-    //const users = await productsController.getAllUsers()
-    res.render("admin", {
+router.get('/',isAuthenticated, async (req, res) => {
+    const result = await userController.getAllUsers()
+    const users = JSON.parse(result)
+    await res.render("admin", {
         users: users,
         isAdmin: true,
     })

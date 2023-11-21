@@ -12,7 +12,8 @@ const regUser = async (req,res) => {
 }
 
 const getAllUsers = (isAuthenticated , async (req,res) => {
-    return await userModel.getAllUsers(req)
+    res = await userModel.getAllUsers(req)
+    return res
 })
 
 module.exports = {

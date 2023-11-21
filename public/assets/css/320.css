@@ -663,6 +663,12 @@ footer {
     flex-direction: column;
     gap: 25px;
 }
+.benefits__icon {
+    width: 50px;
+}
+.benefits__icon path {
+    color: var(--icons-color--dark);
+}
 
 .plans {
     padding-top: 50px;
@@ -1309,6 +1315,7 @@ button.upload-more img {
     height: 28px;
     grid-template-columns: 5fr 2fr;
     position: relative;
+    z-index: 1;
 }
 .user__email-interactives {
     display: flex;
@@ -1366,7 +1373,7 @@ button.upload-more img {
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
-    z-index: 3;
+    z-index: 10;
 }
 .user__modal-item {
     display: flex;
@@ -1378,6 +1385,10 @@ button.upload-more img {
     -webkit-user-select: none; 
     user-select: none;
     transition: 0.15s ease-in;
+    z-index: 10;
+}
+.user__modal-item * {
+    pointer-events: none;
 }
 .user__modal-item > span{
     font-size: 10px;

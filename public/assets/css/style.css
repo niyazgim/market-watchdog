@@ -7,6 +7,8 @@
     --corporative-color:#F24333;
     --big-table-cell-color--acent:#FEEFEE;
     --icons-color--dark:#2D2C3A;
+    --icons-color--lamp-hover: rgb(238, 215, 12);
+    --icons-color---money-hover:#0db90d;
     --text-color--1:#121212;
     --text-color--2:#555555;
     --text-color--3:#7C7C7C;
@@ -20,9 +22,6 @@
     --text-color--invalid:#E82222;
     --text-color--link:#216FE5;
     --button-color--hover:#F5F5F5;
-
-	--w: #2d2d2d;
-	--s: 2s;
 }
 *,*::before,*::after {
     margin: 0;

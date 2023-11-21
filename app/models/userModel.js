@@ -60,7 +60,7 @@ const regUser = function(req, res) {
 
 const getAllUsers = async (req,res) => {
     res = await connect.query("SELECT * FROM user")
-    return res.json()
+    return JSON.stringify(res[0])
 }
 
 module.exports = {

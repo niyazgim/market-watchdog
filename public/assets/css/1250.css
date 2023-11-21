@@ -565,6 +565,29 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
 }
+.benefits__icon {
+    transition: 0.4s ease-out;
+}
+.benefits__icon path {
+    width: 75px;
+    transition: 0.2s ease-out;
+    fill: var(--icons-color--dark);
+}
+.benefits_item:hover .benefits__icon path {
+    fill: var(--corporative-color);
+}
+.benefits_item:hover .benefits__icon#lamp_icon path {
+    fill: var(--icons-color--lamp-hover);
+}
+.benefits_item:hover .benefits__icon#money_icon path {
+    fill: var(--icons-color---money-hover);
+}
+.benefits_item:hover .benefits__icon#statistics_icon path {
+    fill: var(--corporative-color);
+}
+.benefits_item:hover .benefits__icon {
+    transform: scale(1.2);
+}
 
 .plans {
     padding-top: 100px;
@@ -1188,6 +1211,7 @@ button.upload-more p {
     height: 38px;
     grid-template-columns: 5fr 2fr;
     position: relative;
+    z-index: 1;
 }
 .user__email-interactives {
     display: flex;
@@ -1245,7 +1269,7 @@ button.upload-more p {
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
-    z-index: 3;
+    z-index: 10;
 }
 .user__modal-item {
     display: flex;
@@ -1257,6 +1281,9 @@ button.upload-more p {
     -webkit-user-select: none; 
     user-select: none;
     transition: 0.15s ease-in;
+}
+.user__modal-item * {
+    pointer-events: none;
 }
 .user__modal-item > span{
     font-size: 16px;
