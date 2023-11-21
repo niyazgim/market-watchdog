@@ -7,8 +7,10 @@
 
     {{{body}}}
 
-    {{>footer}}
-    {{>reg-modal}}
-    {{>log-modal}}
+    {{#unless isBanned}}
+        {{>footer}}
+        {{>reg-modal}}
+        {{>log-modal}}
+    {{/unless }}
 </body>
 </html>

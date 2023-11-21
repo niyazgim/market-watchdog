@@ -7,9 +7,12 @@ const { regValidator } = require('../models/userModel')
 const { validationResult } = require('express-validator')
 const bcrypt = require("bcrypt")
 
-function isAuthenticated(req, res, next) {
+async function isAuthenticated(req, res, next) {
     if (req.session.userId) {
-        return next();
+        const result = await connect.execute("SELECT * FROM user WHERE _id = ?",[req.session.userId])
+        if(result[0][0].role_id > 1) {
+            return next();
+        }
     }
     res.redirect('/');
 }
@@ -28,22 +31,32 @@ router.get('/', async (req, res) => {
     if(req.session.userId) {
         connect.query("SELECT * FROM user WHERE _id = ?",[req.session.userId])
             .then((result)=>{
-                if(result[0][0].role_id > 2) {
+                if(result[0][0].role_id == 1) {
+                    res.render("index--banned", {
+                        isBanned: true,
+                        isLogged: true,
+                        title: 'main page',
+                        isAdmin: true
+                    })
+                } else if(result[0][0].role_id > 2) {
                     res.render("index--registered", {
+                        isBanned: false,
                         isLogged: true,
                         title: 'main page',
                         isAdmin: true
                     })
                 } else {
                     res.render("index--registered", {
+                        isBanned: false,
                         isLogged: true,
                         title: 'main page',
                         isAdmin: false
                     })
-                }
+                } 
             })
     } else {
         res.render("index--not-registered", {
+            isBanned: false,
             isLogged: false,
             title: 'parser watchdog',
         })
@@ -112,6 +125,18 @@ router.post('/blockUser', isAdmin, async (req, res) => {
     }
     else {
         console.log(`block user with id ${_id}`)
+        res.redirect('/');
+    }
+});
+router.post('/unblockUser', isAdmin, async (req, res) => {
+    const { _id } = req.body;
+    await connect.query("UPDATE `user` SET `role_id`= 2 WHERE _id = ?", [_id]);
+    let errors = []
+    if(errors.length != []) {
+        return res.status(400).json(errors)
+    }
+    else {
+        console.log(`unblock user with id ${_id}`)
         res.redirect('/');
     }
 });

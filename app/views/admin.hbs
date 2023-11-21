@@ -14,10 +14,18 @@
             {{#each users}}
                 <div class="user" data-uid="{{this._id}}">
                     <div class="user__modal hidden">
-                        <button class="user__modal-item block-user">
-                            <img src="/assets/img/icons/block.svg" alt="block_icon">
-                            <span>Заблокировать пользователя</span>
-                        </button>
+                        {{#when this.role_id 'noteq' 1}}
+                            <button class="user__modal-item block-user">
+                                <img src="/assets/img/icons/block.svg" alt="block_icon">
+                                <span>Заблокировать пользователя</span>
+                            </button>
+                        {{/when }}
+                        {{#when this.role_id 'eq' 1}}
+                            <button class="user__modal-item unblock-user">
+                                <img src="/assets/img/icons/undo.svg" alt="unblock_icon">
+                                <span>Разблокировать пользователя</span>
+                            </button>
+                        {{/when }}
                         <button class="user__modal-item delete-user">
                             <img src="/assets/img/icons/delete--red.svg" alt="delete-user_icon">
                             <span>Удалить пользователя</span>
@@ -44,3 +52,4 @@
 
 <script src="/assets/js/delete.js"></script>
 <script src="/assets/js/blockUser.js"></script>
+<script src="/assets/js/unblockUser.js"></script>

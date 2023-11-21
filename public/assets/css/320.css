@@ -177,7 +177,9 @@ h2 {
     width: 100%;
     height: 100%;
     position: fixed;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 30;
     top: 0;
     left: 0;
@@ -228,6 +230,16 @@ header {
     width: 30px;
     height: 30px;
     border-radius: 50px;
+}
+.burger-menu__user-btns a.btn {
+    margin-left: auto;
+    width: 200px;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    background: var(--corporative-color);
+    color: var(--text-color--contrast-1);
 }
 /* .burger-menu__btn .line {
     position: absolute;
@@ -842,6 +854,12 @@ footer {
 .search-res {
     padding-top: 20px;
 }
+.search-res__headline {
+    font-size: 20px;
+}
+.search-res__headline + .search-product {
+    margin-top: 15px;
+}
 .search-product {
     border: 1px solid var(--input-border-color--non-active);
     border-radius: 100px;
@@ -858,7 +876,7 @@ footer {
     height: 40px;
     background: none;
     border: none;
-    padding-left: 12px !important;
+    padding-left: 14px !important;
 }
 .search-btn {
     background: none !important;
@@ -871,10 +889,9 @@ footer {
     height: 20px;
 }
 .res-num_upload-more {
-    margin-top: 25px;
+    margin-top: 12px;
     display: flex;
     gap: 15px;
-    align-items: center;
     flex-direction: column;
 }
 button.upload-more {
@@ -908,7 +925,7 @@ button.upload-more img {
     text-decoration-line: underline;
 }
 .results__container {
-    margin-top: 35px;
+    margin-top: 20px;
 }
 .result {
     width: 100%;
@@ -1417,4 +1434,20 @@ button.upload-more img {
 }
 .invalid {
     color: var(--text-color--invalid);
+}
+
+.banned {
+    padding-top: 50px;
+}
+.banned h1 {
+    font-size: 26px;
+}
+.banned a.btn {
+    margin-top: 30px;
+    background: var(--corporative-color);
+    color: var(--text-color--contrast-1);
+    text-align: center;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
 }

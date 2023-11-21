@@ -3,32 +3,35 @@
         <a href="/">
             <img src="assets/img/logo/logo.svg" alt="logo" class="header__logo">
         </a>
-        <nav class="header__nav">
-            <div class="header__menu">
-                <a href="/#plans">Тарифы</a>
-                <a href="/">Почему мы?</a>
-                <a href="/#faq">Вопрос-ответ</a>
-            </div>
-            <div class="header__user-btns">
-                {{#if isLogged}}
-                    <a href="/profile" class="btn">Профиль</a>
-                    {{#if isAdmin}}
-                        <a href="/admin" class="btn">Админ-панель</a>
+        {{#unless isBanned}}
+            <nav class="header__nav">
+                <div class="header__menu">
+                    <a href="/#plans">Тарифы</a>
+                    <a href="/">Почему мы?</a>
+                    <a href="/#faq">Вопрос-ответ</a>
+                </div>
+                <div class="header__user-btns">
+                    {{#if isLogged}}
+                        <a href="/profile" class="btn">Профиль</a>
+                        {{#if isAdmin}}
+                            <a href="/admin" class="btn">Админ-панель</a>
+                        {{/if}}
+                        <a href="/logout" class="btn">Выйти</a>
                     {{/if}}
-                    <a href="/logout" class="btn">Выйти</a>
-                {{/if}}
-                {{#unless isLogged}}
-                    <button id="sign-in" class="btn-modal">Войти</a>
-                    <button id="sign-up" class="btn-modal">Регистрация</a>
-                {{/unless}}
-            </div>
-        </nav>
-        <button class="burger-menu__btn">
-            <img src="assets/img/icons/menu.svg" alt="burger-menu_icon">
-        </button>
+                    {{#unless isLogged}}
+                        <button id="sign-in" class="btn-modal">Войти</a>
+                        <button id="sign-up" class="btn-modal">Регистрация</a>
+                    {{/unless}}
+                </div>
+            </nav>
+            <button class="burger-menu__btn">
+                <img src="assets/img/icons/menu.svg" alt="burger-menu_icon">
+            </button>
+        {{/unless }}
     </div>
 </header>
 
+{{#unless isBanned}}
 <div class="burger-menu">
     <nav class="burger-menu__nav">
         <div class="burger-menu__menu">
@@ -51,3 +54,4 @@
         </div>
     </nav>
 </div>
+{{/unless }}

@@ -17,32 +17,35 @@ const staticPath = path.join(__dirname, "/public")
 app.use(express.static(staticPath))
 
 
-// Set 'hbs' as the default view engine
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', 'hbs');
 
 // Set the views directory
 app.set('views', path.join(__dirname, 'app/views'));
 hbs.registerPartials(__dirname + '/app/views/partials');
 
-Handlebars.registerHelper( "when",function(operand_1, operator, operand_2, options) {
-    var operators = {
-    'eq': function(l,r) { return l == r; },
-    'noteq': function(l,r) { return l != r; },
-    'gt': function(l,r) { return Number(l) > Number(r); },
-    'or': function(l,r) { return l || r; },
-    'and': function(l,r) { return l && r; },
-    '%': function(l,r) { return (l % r) === 0; }
-    }
-    , result = operators[operator](operand_1,operand_2);
-
-    if (result) return options.fn(this);
-    else  return options.inverse(this);
-});
-
+// Set 'hbs' as the default view engine
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs', 
+    helpers: {
+        when : function(operand_1, operator, operand_2, options) {
+            var operators = {
+                'eq': function(l,r) { return l == r; },
+                'noteq': function(l,r) { return l != r; },
+                'gt': function(l,r) { return Number(l) > Number(r); },
+                'or': function(l,r) { return l || r; },
+                'and': function(l,r) { return l && r; },
+                '%': function(l,r) { return (l % r) === 0; }
+            }
+            , result = operators[operator](operand_1,operand_2);
+            
+            if (result) return options.fn(this);
+            else  return options.inverse(this);
+        }
+    },
+}));
 
 app.use('/', require('./app/routes/root'));
 app.use('/admin', require('./app/routes/api/adminRouter'));
+app.use('/profile', require('./app/routes/api/profileRouter'));
 
 
 
