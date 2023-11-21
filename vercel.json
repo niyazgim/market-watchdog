@@ -6,15 +6,6 @@
         "use": "@vercel/node"
     }
     ],
-    "functions": {
-    "api/user": {
-        "runtime": "nodejs12.x",
-        "environment": {
-        "PLAYWRIGHT_BROWSERS_PATH": "/vercel/path/to/chromium",
-        "NPM_CONFIG_PRODUCTION": "false"
-        }
-    }
-    },
     "routes": [
     {
         "src": "/(.*)",
