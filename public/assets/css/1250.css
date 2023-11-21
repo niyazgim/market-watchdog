@@ -1331,3 +1331,32 @@ button.upload-more p {
     padding: 12px 20px;
     font-size: 18px;
 }
+
+.banner_modal {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--modal-color--light-1);
+    width: 500px;
+    border: none;
+    position: fixed;
+    bottom: -20%;
+    right: 50px;
+    transition: 0.3s ease-out;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.banner_modal.opened {
+    bottom: 30%;
+}
+.banner_modal .modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner__close {
+    width: 30px;
+    height: 30px;
+}
+.banner__close path {
+    fill: var(--icons-color--dark);
+}
