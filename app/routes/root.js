@@ -14,6 +14,7 @@ async function isAuthenticated(req, res, next) {
             return next();
         }
     }
+    console.log('no')
     res.redirect('/');
 }
 
