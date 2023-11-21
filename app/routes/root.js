@@ -100,7 +100,9 @@ router.post('/logUser', async (req, res) => {
         return res.status(400).json(errors)
     }
     else {
-        req.session.userId = user[0][0]._id; // Set the user's ID in the session
+        req.session.userId = user[0][0]._id;
+        console.log(user)
+        console.log('user is logged')
         res.redirect('/');
     }
 });
