@@ -8,13 +8,19 @@
         </div>
         <div class="modal__content">
             <form method="post" id="logForm">
-                <div class="input_container">
-                    <input type="text" class="form__input" placeholder=" " name="email">
-                    <label for="">E-mail</label>
+                <div class="input__item" id="email">
+                    <div class="input_container">
+                        <input type="text" class="form__input" placeholder=" " name="email">
+                        <label for="">E-mail</label>
+                    </div>
+                    <p class="status-text invalid"></p>
                 </div>
-                <div class="input_container">
-                    <input type="password" class="form__input" placeholder=" " name="pass_1">
-                    <label for="">Пароль</label>
+                <div class="input__item" id="pass_1">
+                    <div class="input_container">
+                        <input type="password" class="form__input" placeholder=" " name="pass_1">
+                        <label for="">Пароль</label>
+                    </div>
+                    <p class="status-text invalid"></p>
                 </div>
                 <input type="submit" value="Войти">
             </form>

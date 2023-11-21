@@ -12,8 +12,10 @@
             <div class="header__user-btns">
                 {{#if isLogged}}
                     <a href="/profile" class="btn">Профиль</a>
+                    {{#if isAdmin}}
+                        <a href="/admin" class="btn">Админ-панель</a>
+                    {{/if}}
                     <a href="/logout" class="btn">Выйти</a>
-                    <a href="/admin" class="btn">Админ-панель</a>
                 {{/if}}
                 {{#unless isLogged}}
                     <button id="sign-in" class="btn-modal">Войти</a>
@@ -35,8 +37,17 @@
             <a href="">Вопрос-ответ</a>
         </div>
         <div class="burger-menu__user-btns">
-            <button id="sign-in" class="btn-modal">Войти</a>
-            <button id="sign-up" class="btn-modal">Регистрация</a>
+            {{#if isLogged}}
+                <a href="/profile" class="btn">Профиль</a>
+                {{#if isAdmin}}
+                    <a href="/admin" class="btn">Админ-панель</a>
+                {{/if}}
+                <a href="/logout" class="btn">Выйти</a>
+            {{/if}}
+            {{#unless isLogged}}
+                <button id="sign-in" class="btn-modal">Войти</a>
+                <button id="sign-up" class="btn-modal">Регистрация</a>
+            {{/unless}}
         </div>
     </nav>
 </div>

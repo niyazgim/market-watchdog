@@ -4,7 +4,7 @@ logForm.onsubmit = async (e) => {
     e.preventDefault()
     let user = {
         'email' : logForm.email.value,
-        'password' : logForm.pass_1.value,
+        'pass_1' : logForm.pass_1.value,
     }
     const res = await fetch('/logUser',{
         method: 'POST',
@@ -14,12 +14,12 @@ logForm.onsubmit = async (e) => {
         body: JSON.stringify(user)
     })
     if (!res.ok) {
-        console.log("Error trying to log in");
-        throw res;
     }
     if (res.status === 400) {
         const status = await res.json()
-        return status;
+        for(let i = status.length - 1; i >= 0; i--) {
+            document.querySelector(`#logForm .input__item#${status[i].path} .status-text`).textContent = status[i].msg
+        }
     } else if(res.ok){
         window.location.href = "/"
     }

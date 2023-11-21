@@ -24,7 +24,7 @@ const getProductsList = async (req,res) => {
                         clearInterval(timer);
                         resolve();
                     }
-                }, 100); // Adjust the scrolling speed if necessary
+                }, 150); // Adjust the scrolling speed if necessary
             });
         });
     };

@@ -39,40 +39,6 @@ const regValidator = [
         })
 ]
 
-// const logValidator = [
-//     check('email')
-//         .trim()
-//         .escape()
-//         .notEmpty()
-//         .withMessage('Введите email')
-//         .isLength({min: 3})
-//         .withMessage('Минимальная длинна - 3 символа')
-//         .isEmail()
-//         .withMessage('Некорректный email'),
-//     check('email')
-//         .custom(async (email) => {
-//             const existingUser = 
-//                 await connect.query("SELECT `email` FROM `user` WHERE email = ?",[email])
-            
-//             if (existingUser[0].length === 0) {
-//                 throw new Error('Пользователя с такой почтой не существует');
-//             }
-//         }),
-//     check('pass_1')
-//         .notEmpty()
-//         .withMessage('Введите пароль'),
-//     check('pass_1')
-//         .custom(async (email, pass_1) => {
-//             const checkPass = 
-//                 await connect.query("SELECT `password` FROM `user` WHERE email = ?",[email])
-//             bcrypt.compare(checkPass, hash)
-//             .then(res => {
-//                 console.log(res)
-//             })
-//             .catch(err => console.error(err.message))        
-//         }),
-//     ]
-
 const regUser = function(req, res) { 
     bcrypt.hash(req.body.pass_1, 10)
         .then(hash => {
@@ -92,7 +58,13 @@ const regUser = function(req, res) {
     .catch(err => console.error(err.message))
 }
 
+const getAllUsers = async (req,res) => {
+    res = await connect.query("SELECT * FROM user")
+    return res.json()
+}
+
 module.exports = {
     regValidator,
     regUser,
+    getAllUsers,
 }

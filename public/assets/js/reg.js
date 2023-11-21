@@ -15,12 +15,14 @@ regForm.onsubmit = async (e) => {
         body: JSON.stringify(user)
     })
     if (!res.ok) {
-        console.log("Error trying to reg user");
-        throw res;
+        // console.log("Error trying to reg user");
+        // throw res;
     }
     if (res.status === 400) {
         const status = await res.json()
-        return status;
+        for(let i = status['errors'].length - 1; i >= 0; i--) {
+            document.querySelector(`#regForm .input__item#${status['errors'][i].path} .status-text`).textContent = status['errors'][i].msg
+        }
     } else if(res.ok){
         window.location.href = "/"
     }
