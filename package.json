@@ -7,7 +7,7 @@
         "node": "18.x"
     },
     "scripts": {
-        "dev": "nodemon app.js",
+        "dev": "nodemon index.js",
         "start": "node index.js",
         "server": "nodemon index.js"
     },
