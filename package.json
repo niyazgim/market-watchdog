@@ -4,7 +4,7 @@
     "description": "node js marketplace parser",
     "main": "app.js",
     "engines": {
-        "node": "21.x"
+        "node": "18.x"
     },
     "scripts": {
         "dev": "nodemon app.js",
