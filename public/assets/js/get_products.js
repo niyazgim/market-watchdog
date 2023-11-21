@@ -46,14 +46,14 @@ async function renderProducts() {
         //     <img src="assets/img/icons/sell.svg" alt="lowest-price_icon">
         //     <span>Самая низкая цена</span>
         // </div>
+        // <button class="result__fav_btn">
+        //     <img src="assets/img/icons/favorite.svg" alt="favorite">
+        // </button>
         
     resArr.forEach(e => {
     resultsContainer.innerHTML += `
         <div class="result">
             <div class="result__container">
-                <button class="result__fav_btn">
-                    <img src="assets/img/icons/favorite.svg" alt="favorite">
-                </button>
                 <div class="result__product-info">
                 <p class="product-name-text">${e.name}</p>
                 <p class="product-price-text">${e.price}<span class="currency-type-text">₽</span></p>
@@ -91,9 +91,6 @@ async function renderProducts() {
                             <p class="result__raiting-relevance">${e.rateRelevance}</p>
                         </div>
                     </div>
-                    <button class="result__fav_btn">
-                    <img src="assets/img/icons/favorite.svg" alt="favorite">
-                    </button>
                     <a href="${e.link}" target="_blank"  class="marketplace_btn">
                         <p>WB</p>
                         <img src="assets/img/icons/east.svg" alt="btn_arrow">

@@ -5,11 +5,13 @@
         </a>
         {{#unless isBanned}}
             <nav class="header__nav">
+                {{#unless isLogged}}
                 <div class="header__menu">
                     <a href="/#plans">Тарифы</a>
                     <a href="/">Почему мы?</a>
                     <a href="/#faq">Вопрос-ответ</a>
                 </div>
+                {{/unless }}
                 <div class="header__user-btns">
                     {{#if isLogged}}
                         <a href="/profile" class="btn">Профиль</a>
@@ -34,11 +36,13 @@
 {{#unless isBanned}}
 <div class="burger-menu">
     <nav class="burger-menu__nav">
+        {{#unless isLogged}}
         <div class="burger-menu__menu">
             <a href="">Тарифы</a>
             <a href="">Почему мы?</a>
             <a href="">Вопрос-ответ</a>
         </div>
+        {{/unless }}
         <div class="burger-menu__user-btns">
             {{#if isLogged}}
                 <a href="/profile" class="btn">Профиль</a>

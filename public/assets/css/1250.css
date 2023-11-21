@@ -864,9 +864,9 @@ button.upload-more p {
     min-width: fit-content;
     width: 375px;
     display: grid;
-    grid-template-columns: 45px 75px 85px;
+    grid-template-columns: 50px 75px 110px;
     justify-content: space-between;
-    padding-inline: 12px;
+    padding-inline: 3px;
 }
 .result__raiting-text-img {
     display: flex;

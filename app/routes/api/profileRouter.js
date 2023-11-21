@@ -14,14 +14,15 @@ async function isAuthenticated(req, res, next) {
 }
 
 router.get('/',isAuthenticated, async (req, res) => {
-    const user = await userController.getUser(req.session.userId)
+    const user = await connect.query("SELECT * FROM user WHERE _id = ?",[req.session.userId])
     if(user[0][0].role_id > 2) {
         res.render("profile", {
             isBanned: false,
             isLogged: true,
             title: 'profile',
             isAdmin: true,
-            user: user[0][0],
+            user_email: user[0][0].email,
+            user_role_id: user[0][0].role_id,
         })
     } else {
         res.render("profile", {
@@ -29,7 +30,8 @@ router.get('/',isAuthenticated, async (req, res) => {
             isLogged: true,
             title: 'profile',
             isAdmin: false,
-            user: user[0][0],
+            user_email: user[0][0].email,
+            user_role_id: user[0][0].role_id,
         })
     } 
 });

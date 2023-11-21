@@ -8,14 +8,12 @@ const { validationResult } = require('express-validator')
 const bcrypt = require("bcrypt")
 
 async function isAuthenticated(req, res, next) {
-    console.log(req.session.userId)
     if (req.session.userId) {
         const result = await connect.execute("SELECT * FROM user WHERE _id = ?",[req.session.userId])
         if(result[0][0].role_id > 1) {
             return next();
         }
     }
-    console.log('no')
     res.redirect('/');
 }
 

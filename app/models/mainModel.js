@@ -39,7 +39,7 @@ const getProductsList = async (req,res) => {
             let raiting = parseFloat(element.querySelector('.address-rate-mini').textContent.replace(/[^\d.]/g, ''))
             if(raiting) {
                 const reviewsCount = parseFloat(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, ''))
-                const rateRelevance = parseFloat((parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) / parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, '')))).toFixed(5)
+                const rateRelevance = (parseFloat((parseFloat(element.querySelector('.address-rate-mini').textContent.trim().replace(/[^\d.]/g, '')) * parseInt(element.querySelector('.product-card__count').textContent.trim().replace(/[^\d.]/g, '')))) / 100).toFixed(2)
                 const degreeOfProfitability = parseFloat(rateRelevance / price)
                 return { pid, link, name, price, priceOld, raiting, reviewsCount, rateRelevance, degreeOfProfitability }
             }

@@ -16,23 +16,25 @@
                     <form method="post">
                         <!-- Сделать возможность изменения после нажатия на кнопку изменить в каждом инпуте -->
                         <div class="input__item">
-                            <div class="input_container">
-                                <input type="text" class="form__input" placeholder=" " value="niiaz280228@mail.ru">
+                            {{!-- <div class="input_container">
+                                <input type="text" class="form__input" placeholder=" " value="">
                                 <label for="">E-mail</label>
                             </div>
-                            <p class="status-text invalid"></p>
+                            <p class="status-text invalid"></p> --}}
+                            <p>email: {{user_email}}</p>
                         </div>
                         <div class="input__item">
-                            <div class="input_container">
+                            {{!-- <div class="input_container">
                                 <input type="password" class="form__input" placeholder=" " value="123456">
                                 <label for="">Пароль</label>
                             </div>
-                            <p class="status-text invalid"></p>
+                            <p class="status-text invalid"></p> --}}
+                            <p>уровень: {{user_role_id}}</p>
                         </div>
-                        <input type="submit" value="Сохранить измения">
+                        {{!-- <input type="submit" value="Сохранить измения"> --}}
                     </form>
                 </div>
-                <div class="profile__item">
+                {{!-- <div class="profile__item">
                     <h2>Действия</h2>
                     <button class="profile__interactives_btn">
                         <img src="assets/img/icons/change_circle--blue.svg" alt="change-subscribe_icon">
@@ -42,7 +44,7 @@
                         <img src="assets/img/icons/delete--red.svg" alt="delete-acc_icon">
                         <span>Удалить аккаунт</span>
                     </button>
-                </div>
+                </div> --}}
                 {{!-- <div class="profile__item">
                     <h2>Платёжные средства</h2>
                     <div class="payments_container">
