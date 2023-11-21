@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "node js marketplace parser",
     "main": "app.js",
+    "engines": {
+        "node": "21.x"
+    },
     "scripts": {
         "dev": "nodemon app.js",
         "start": "node app.js"
