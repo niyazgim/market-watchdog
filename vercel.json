@@ -2,14 +2,18 @@
     "version": 2,
     "builds": [
     {
-        "src": "./index.js",
+        "src": "example-folder",
         "use": "@vercel/node"
     }
     ],
-    "routes": [
-    {
-        "src": "/(.*)",
-        "dest": "/"
+    "functions": {
+    "api/user": {
+        "runtime": "nodejs12.x",
+        "environment": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/vercel/path/to/chromium",
+        "NPM_CONFIG_PRODUCTION": "false"
+        }
     }
-    ]
+    },
+    "routes": []
 }
