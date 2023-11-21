@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
     {
-        "src": "example-folder",
+        "src": "./index.js",
         "use": "@vercel/node"
     }
     ],
@@ -15,5 +15,10 @@
         }
     }
     },
-    "routes": []
+    "routes": [
+    {
+        "src": "/(.*)",
+        "dest": "/"
+    }
+    ]
 }
