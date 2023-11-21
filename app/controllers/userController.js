@@ -15,8 +15,13 @@ const getAllUsers = (isAuthenticated , async (req,res) => {
     res = await userModel.getAllUsers(req)
     return res
 })
+const getUser = (isAuthenticated , async (req,res) => {
+    res = await userModel.getUser(req)
+    return res
+})
 
 module.exports = {
     regUser,
-    getAllUsers
+    getAllUsers,
+    getUser,
 }

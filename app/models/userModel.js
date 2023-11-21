@@ -62,9 +62,15 @@ const getAllUsers = async (req,res) => {
     res = await connect.query("SELECT * FROM user")
     return JSON.stringify(res[0])
 }
+const getUser = async (req,res) => {
+    console.log(req);
+    res = await connect.query("SELECT * FROM user WHERE _id = ?",[req])
+    return JSON.stringify(res[0])
+}
 
 module.exports = {
     regValidator,
     regUser,
     getAllUsers,
+    getUser,
 }

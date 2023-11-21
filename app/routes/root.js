@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
 
 router.post('/searchProducts', isAuthenticated,  async (req,res) => {
     let products = await productsController.getProducts(req.body.query)
-    res.send(products)
+    res.send(products) 
 }) 
 
 router.post('/regUser', [

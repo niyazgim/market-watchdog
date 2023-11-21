@@ -14,16 +14,26 @@ async function isAuthenticated(req, res, next) {
 }
 
 router.get('/',isAuthenticated, async (req, res) => {
-    const result = await userController.getAllUsers()
-    const users = JSON.parse(result)
-    await res.render("admin", {
-        isBanned: false,
-        users: users,
-        isLogged: true,
-        isAdmin: true,
-    })
+    const user = await userController.getUser(req.session.userId)
+    if(user[0][0].role_id > 2) {
+        res.render("profile", {
+            isBanned: false,
+            isLogged: true,
+            title: 'profile',
+            isAdmin: true,
+            user: user[0][0],
+        })
+    } else {
+        res.render("profile", {
+            isBanned: false,
+            isLogged: true,
+            title: 'profile',
+            isAdmin: false,
+            user: user[0][0],
+        })
+    } 
 });
 
-router.route('/admin')
+router.route('/profile')
 
 module.exports = router;

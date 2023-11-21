@@ -15,13 +15,19 @@
                     <h2>Данные</h2>
                     <form method="post">
                         <!-- Сделать возможность изменения после нажатия на кнопку изменить в каждом инпуте -->
-                        <div class="input_container">
-                            <input type="text" class="form__input" placeholder=" " value="niiaz280228@mail.ru">
-                            <label for="">E-mail</label>
+                        <div class="input__item">
+                            <div class="input_container">
+                                <input type="text" class="form__input" placeholder=" " value="niiaz280228@mail.ru">
+                                <label for="">E-mail</label>
+                            </div>
+                            <p class="status-text invalid"></p>
                         </div>
-                        <div class="input_container">
-                            <input type="password" class="form__input" placeholder=" " value="123456">
-                            <label for="">Пароль</label>
+                        <div class="input__item">
+                            <div class="input_container">
+                                <input type="password" class="form__input" placeholder=" " value="123456">
+                                <label for="">Пароль</label>
+                            </div>
+                            <p class="status-text invalid"></p>
                         </div>
                         <input type="submit" value="Сохранить измения">
                     </form>
@@ -62,13 +68,17 @@
                         </button>
                         <div class="add-payment__content">
                             <form method="post" class="add-payment__form">
-                                <div class="input_container">
-                                    <input type="text" class="form__input" placeholder=" ">
-                                    <label for="">Номер карты</label>
+                                <div class="input__item">
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" ">
+                                        <label for="">Номер карты</label>
+                                    </div>
                                 </div>
-                                <div class="input_container">
-                                    <input type="text" class="form__input" placeholder=" ">
-                                    <label for="">Имя держателя</label>
+                                <div class="input__item">
+                                    <div class="input_container">
+                                        <input type="text" class="form__input" placeholder=" ">
+                                        <label for="">Имя держателя</label>
+                                    </div>
                                 </div>
                                 <div class="exp-date-card-code">
                                     <div class="input_container">
@@ -80,13 +90,6 @@
                                         <label for="">CVV/CVC</label>
                                     </div>
                                 </div>
-                                <div class="chechbox_container">
-                                    <input type="checkbox" name="">
-                                    <span>Сохранить после оплаты</span>
-                                </div>
-                                <button name="add_payment" type="submit" class="add-payment__btn">
-                                    Добавить карту
-                                </button>
                             </form>
                         </div>
                     </div>

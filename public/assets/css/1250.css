@@ -207,7 +207,7 @@ header {
     padding: 20px 0;
 }
 .burger-menu {
-    display: none;
+    display: none !important;
 }
 .burger-menu__btn {
     display: none;
