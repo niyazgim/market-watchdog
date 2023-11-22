@@ -1,4 +1,9 @@
+html,body {
+    min-width: 100%;
+    min-height: 100%;
+}
 body {
+    transform: translate3d(0px,0px,0px);
     position: relative;
     margin: 0;
 }
@@ -1335,15 +1340,18 @@ button.upload-more p {
     background: var(--modal-color--light-1);
     width: 500px;
     border: none;
-    position: fixed;
+    position: absolute;
     bottom: -20%;
     right: 50px;
+    display: none;
     transition: 0.3s ease-out;
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
 .banner_modal.opened {
+    display: block;
     bottom: 30%;
+    position: fixed;
 }
 .banner_modal .modal {
     display: flex;

@@ -8,8 +8,8 @@ const plansContent = {
                 'text': 'Лучшая цена за функционал'
             }
         ],
-        'price': '600',
-        'priceOld': '500',
+        'price': '300',
+        'priceOld': '600',
     },
     '2': {
         'name': 'Базовый+',
@@ -44,7 +44,7 @@ const plansContent = {
                 'text': 'Самое лучшее для бизнеса'
             }
         ],
-        'price': '1500',
-        'priceOld': '1000',
+        'price': '1000',
+        'priceOld': '1500',
     }
 }
